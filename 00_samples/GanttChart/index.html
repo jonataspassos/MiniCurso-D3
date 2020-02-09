@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <style>
+    .area {
+      fill: steelblue;
+      clip-path: url(#clip);
+    }
+
+    .zoom {
+      cursor: move;
+      fill: none;
+      pointer-events: all;
+    }
+  </style>
+  <!--<svg width="960" height="500"></svg>-->
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <script src="../Repository/jquery-latest.min.js"></script>
+  <script src="../Repository/JSUtil.js"></script>
+  <script src="../Repository/Legend.js"></script>
+
+
+  <script src="brush_zoom.js"></script>
+</head>
+
+<body>
+  <script>
+    var data = [
+      { date: { start: { year: 2018, month: 11, day: 21, hour: 00 }, end: { year: 2018, month: 11, day: 26, hour: 00 }, delay: { year: 2018, month: 11, day: 28, hour: 0 }, }, name: "	Atv01	", percent: 0.1, done: true, action: "	Acessar	", desc: "	LALALA	", },
+      { date: { start: { year: 2018, month: 11, day: 22, hour: 01 }, end: { year: 2018, month: 11, day: 26, hour: 01 },/************************************************************/ }, name: "	Atv02	", percent: 0.4, done: true, action: "	Concluir	", desc: "	LALALA	", },
+      { date: { start: { year: 2018, month: 11, day: 23, hour: 02 }, end: { year: 2018, month: 11, day: 30, hour: 02 }, delay: { year: 2019, month: 00, day: 01, hour: 2 }, }, name: "	Atv03	", percent: 0.3, done: false, action: "	Visualizar 	", desc: "LALALAawefawfawefloajdnakjwndqLJDNLKJEDNLWAKJDCNLASKJDCNLKJWEDNLKEJDNWLEKFJNFLVJNASDUINWAELKFJNASDLCKJASNVLKJDANVLAKJEFNLWEKFJNWLEFJKANSDLVKJSANDLCKJANFLJKWENFLWQJEFNLAJKNFVLAKSJNAWE	AWELFJKAWNEFLKJAWENFLKJAWNEFLKJAWNEFLJKAWNEFLKJWANEFLKJAWNEFWIOEFA´SOIDJPOWIDJWQEPFOIEJVLKASDVÇSD", },
+      { date: { start: { year: 2018, month: 11, day: 24, hour: 03 }, end: { year: 2018, month: 11, day: 31, hour: 03 },/************************************************************/ }, name: "	Atv04	", percent: 0.5, done: false, action: "	Realizar	", desc: "	LALALA	", },
+      { date: { start: { year: 2018, month: 11, day: 25, hour: 04 }, end: { year: 2019, month: 00, day: 01, hour: 04 }, delay: { year: 2019, month: 00, day: 03, hour: 4 }, }, name: "	Atv05	", percent: 1.0, done: false, action: "	Acessar	", desc: "	LALALA	", },
+      { date: { start: { year: 2018, month: 11, day: 26, hour: 05 }, end: { year: 2019, month: 00, day: 02, hour: 05 },/************************************************************/ }, name: "	Atv06	", percent: 0.1, done: false, action: "	Concluir	", desc: "	LALALA	", },
+      { date: { start: { year: 2018, month: 11, day: 27, hour: 06 }, end: { year: 2019, month: 00, day: 03, hour: 06 }, delay: { year: 2019, month: 00, day: 05, hour: 6 }, }, name: "	Atv07	", percent: 0.4, done: true, action: "	Visualizar 	", desc: "	LALALA	", },
+      { date: { start: { year: 2018, month: 11, day: 28, hour: 07 }, end: { year: 2019, month: 00, day: 04, hour: 07 },/************************************************************/ }, name: "	Atv08	", percent: 0.3, done: false, action: "	Realizar	", desc: "	LALALA	", },
+      { date: { start: { year: 2018, month: 11, day: 29, hour: 08 }, end: { year: 2019, month: 00, day: 05, hour: 08 }, delay: { year: 2019, month: 00, day: 07, hour: 8 }, }, name: "	Atv09	", percent: 0.5, done: false, action: "	Acessar	", desc: "	LALALA	", },
+      { date: { start: { year: 2018, month: 11, day: 30, hour: 09 }, end: { year: 2019, month: 00, day: 06, hour: 09 },/************************************************************/ }, name: "	Atv10	", percent: 1.0, done: true, action: "	Concluir	", desc: "	LALALA	", },
+      { date: { start: { year: 2019, month: 00, day: 05, hour: 10 }, end: { year: 2019, month: 00, day: 07, hour: 10 }, delay: { year: 2019, month: 00, day: 09, hour: 10 }, schedule: { year: 2019, month: 0, day: 5, hour: 10 }, }, name: "	Atv11	", percent: 0.1, done: false, action: "	Visualizar 	", desc: "	LALALA	", },
+      { date: { start: { year: 2019, month: 00, day: 06, hour: 11 }, end: { year: 2019, month: 00, day: 08, hour: 11 },/************************************************************/ }, name: "	Atv12	", percent: 0.4, done: false, action: "	Realizar	", desc: "	LALALA	", },
+      { date: { start: { year: 2019, month: 00, day: 07, hour: 12 }, end: { year: 2019, month: 00, day: 09, hour: 12 }, delay: { year: 2019, month: 00, day: 11, hour: 12 }, schedule: { year: 2019, month: 0, day: 7, hour: 12 }, }, name: "	Atv13	", percent: 0.3, done: false, action: "	Acessar	", desc: "	LALALA	", },
+      { date: { start: { year: 2019, month: 00, day: 08, hour: 13 }, end: { year: 2019, month: 00, day: 10, hour: 13 },/************************************************************/ }, name: "	Atv14	", percent: 0.5, done: false, action: "	Concluir	", desc: "	LALALA	", },
+      { date: { start: { year: 2019, month: 00, day: 09, hour: 14 }, end: { year: 2019, month: 00, day: 11, hour: 14 }, delay: { year: 2019, month: 00, day: 13, hour: 14 }, schedule: { year: 2019, month: 0, day: 9, hour: 14 }, }, name: "	Atv15	", percent: 1.0, done: true, action: "	Visualizar 	", desc: "	LALALA	", },
+      { date: { start: { year: 2019, month: 00, day: 10, hour: 15 }, end: { year: 2019, month: 00, day: 12, hour: 15 },/************************************************************/ }, name: "	Atv16	", percent: 0.1, done: false, action: "	Realizar	", desc: "	LALALA	", },
+      { date: { start: { year: 2019, month: 00, day: 11, hour: 16 }, end: { year: 2019, month: 00, day: 13, hour: 16 }, delay: { year: 2019, month: 00, day: 16, hour: 16 }, schedule: { year: 2019, month: 0, day: 11, hour: 16 }, }, name: "	Atv17	", percent: 0.4, done: false, action: "	Acessar	", desc: "	LALALA	", },
+      { date: { start: { year: 2019, month: 00, day: 12, hour: 17 }, end: { year: 2019, month: 00, day: 14, hour: 17 },/************************************************************/ }, name: "	Atv18	", percent: 0.3, done: true, action: "	Concluir	", desc: "	LALALA	", },
+      { date: { start: { year: 2019, month: 00, day: 13, hour: 18 }, end: { year: 2019, month: 00, day: 15, hour: 18 }, delay: { year: 2019, month: 00, day: 18, hour: 18 }, schedule: { year: 2019, month: 0, day: 13, hour: 18 }, }, name: "	Atv19	", percent: 0.5, done: false, action: "	Visualizar 	", desc: "	LALALA	", },
+      { date: { start: { year: 2019, month: 00, day: 14, hour: 19 }, end: { year: 2019, month: 00, day: 16, hour: 19 },/************************************************************/ }, name: "	Atv20	", percent: 1.0, done: true, action: "	Realizar	", desc: "	LALALA	", },
+      { date: { start: { year: 2019, month: 00, day: 15, hour: 20 }, end: { year: 2019, month: 00, day: 17, hour: 20 }, delay: { year: 2019, month: 00, day: 20, hour: 20 }, schedule: { year: 2019, month: 0, day: 15, hour: 20 }, }, name: "	Atv21	", percent: 0.1, done: false, action: "	Acessar	", desc: "	LALALA	", },
+      { date: { start: { year: 2019, month: 00, day: 16, hour: 21 }, end: { year: 2019, month: 00, day: 18, hour: 21 },/************************************************************/ }, name: "	Atv22	", percent: 0.4, done: true, action: "	Concluir	", desc: "	LALALA	", },
+      { date: { start: { year: 2019, month: 00, day: 16, hour: 22 }, end: { year: 2019, month: 00, day: 19, hour: 22 }, delay: { year: 2019, month: 00, day: 22, hour: 22 }, schedule: { year: 2019, month: 0, day: 16, hour: 22 }, }, name: "	Atv23	", percent: 0.3, done: false, action: "	Visualizar 	", desc: "	LALALA	", },
+      { date: { start: { year: 2019, month: 00, day: 17, hour: 23 }, end: { year: 2019, month: 00, day: 20, hour: 23 },/************************************************************/ }, name: "	Atv24	", percent: 0.5, done: false, action: "	Realizar	", desc: "	LALALA	", },
+      { date: { start: { year: 2019, month: 00, day: 18, hour: 00 }, end: { year: 2019, month: 00, day: 21, hour: 00 }, delay: { year: 2019, month: 00, day: 24, hour: 0 }, schedule: { year: 2019, month: 0, day: 18, hour: 0 }, }, name: "	Atv25	", percent: 1.0, done: false, action: "	Acessar	", desc: "	LALALA	", },
+      { date: { start: { year: 2019, month: 00, day: 19, hour: 00 }, end: { year: 2019, month: 00, day: 22, hour: 00 },/************************************************************/																schedule: { year: 2019, month: 0, day: 19, hour: 0 }, }, name: "	Atv26	", percent: 0.1, done: false, action: "	Concluir	", desc: "	LALALA	", },
+      { date: { start: { year: 2019, month: 00, day: 19, hour: 01 }, end: { year: 2019, month: 00, day: 23, hour: 01 }, delay: { year: 2019, month: 00, day: 26, hour: 1 }, }, name: "	Atv27	", percent: 0.4, done: false, action: "	Visualizar 	", desc: "	LALALA	", },
+      { date: { start: { year: 2019, month: 00, day: 20, hour: 02 }, end: { year: 2019, month: 00, day: 24, hour: 02 },/************************************************************/																schedule: { year: 2019, month: 0, day: 20, hour: 2 }, }, name: "	Atv28	", percent: 0.3, done: false, action: "	Realizar	", desc: "	LALALA	", },
+      { date: { start: { year: 2019, month: 00, day: 21, hour: 03 }, end: { year: 2019, month: 00, day: 25, hour: 03 }, delay: { year: 2019, month: 00, day: 28, hour: 3 }, }, name: "	Atv29	", percent: 0.5, done: false, action: "	Acessar	", desc: "	LALALA	", },
+      { date: { start: { year: 2019, month: 00, day: 23, hour: 04 }, end: { year: 2019, month: 00, day: 26, hour: 04 },/************************************************************/																schedule: { year: 2019, month: 0, day: 23, hour: 4 }, }, name: "	Atv30	", percent: 1.0, done: false, action: "	Concluir	", desc: "	LALALA	", },
+      { date: { start: { year: 2019, month: 00, day: 25, hour: 05 }, end: { year: 2019, month: 00, day: 27, hour: 05 }, delay: { year: 2019, month: 00, day: 30, hour: 5 }, }, name: "	Atv31	", percent: 0.1, done: false, action: "	Visualizar 	", desc: "	LALALA	", },
+      { date: { start: { year: 2019, month: 00, day: 26, hour: 06 }, end: { year: 2019, month: 00, day: 28, hour: 06 },/************************************************************/																schedule: { year: 2019, month: 0, day: 26, hour: 6 }, }, name: "	Atv32	", percent: 0.4, done: false, action: "	Realizar	", desc: "	LALALA	", },
+      { date: { start: { year: 2019, month: 00, day: 27, hour: 07 }, end: { year: 2019, month: 00, day: 29, hour: 07 }, delay: { year: 2019, month: 01, day: 01, hour: 7 }, }, name: "	Atv33	", percent: 0.3, done: false, action: "	Acessar	", desc: "	LALALA	", },
+      { date: { start: { year: 2019, month: 00, day: 28, hour: 08 }, end: { year: 2019, month: 00, day: 30, hour: 08 },/************************************************************/																schedule: { year: 2019, month: 0, day: 28, hour: 8 }, }, name: "	Atv34	", percent: 0.5, done: false, action: "	Concluir	", desc: "	LALALA	", },
+      { date: { start: { year: 2019, month: 00, day: 29, hour: 09 }, end: { year: 2019, month: 00, day: 31, hour: 09 }, delay: { year: 2019, month: 01, day: 03, hour: 9 }, }, name: "	Atv35	", percent: 1.0, done: false, action: "	Visualizar 	", desc: "	LALALA	", },
+
+    ];
+
+    var chartConfig = {
+      name: "GanttChart",
+      parent: "body",
+      data: data,
+      dimensions: { width: 1200, height: 500 },
+      margin: {
+        top: 20, right: 10, bottom: 30, left: 10
+      },
+      layout: {
+        maxrow: 5,
+        contextHeight: 0.1,
+        //colors: ["#AD1111", "#FAA916", "#0B4F6C", "#343434", "#00993F"],//0-atrasado 1-dentro_do_prazo 2-pendencia futura 3-não_concluida 4-finalizada
+        colors: ["#F45D0C", "#FFD83F", "#D6D6D6", "#C90808", "#3BA51A"],
+        //backcolors: ["#C43535", "#F9BA43", "#218AB7", "#545454", "#00C150"],
+        backcolors: ["#F47F3F", "#FFE57F", "#EDEDED", "#DB3434", "#6BBF52"],
+
+        texts: ["Atrasada", "Dentro do Prazo", "Tarefa Futura", "Perdida", "Concluída"],
+        texts2: ["Esta tarefa está atrasada", "Você ainda não realizou esta tarefa", "", "Você perdeu esta tarefa", ""],
+      },
+      interactions: {
+        button: function (element, data) {
+          var classelement = d3.select(element).attr("class");
+          if (classelement == "goto")
+            alert("Indo para a atividade " + data.name + "...");
+          else
+            alert("Agendando a atividade " + data.name + "...");
+        }
+      },
+      tooltip: {
+        text: ""
+      },
+      now:new Date(2019,0,10)
+    }
+
+    var data2 = [
+      { name: "subject1", chartConfig: chartConfig, data: data },
+      { name: "subject2", chartConfig: chartConfig, data: data },
+      { name: "subject3", chartConfig: chartConfig, data: data },
+      { name: "subject4", chartConfig: chartConfig, data: data },
+      { name: "subject5", chartConfig: chartConfig, data: data },
+      { name: "subject6", chartConfig: chartConfig, data: data },
+      { name: "subject7", chartConfig: chartConfig, data: data },
+      { name: "subject8", chartConfig: chartConfig, data: data },
+    ];
+
+    data2.target = "body";
+    data2.svg = false;
+
+    var ganttChart = new GanttChart(chartConfig);
+    //var multiGantt = new MultiGanttChart(data2);
+  </script>
+  <button onclick="ganttChart.reset();">Restaurar visão</button>
+
+</body>
+
+</html>

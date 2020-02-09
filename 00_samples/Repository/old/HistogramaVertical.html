@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<title>Visualização de Dados com D3</title>
+	<link rel="stylesheet" href="HistogramaVertical.css">
+	<!--<script src="https://d3js.org/d3.v5.min.js"></script>-->
+	<script  type="text/javascript" src="/Repository/d3.min.js"></script>
+	<script  type="text/javascript" src="/Repository/JSUtil.js"></script>
+</head>
+<body>
+
+	<!-- Aqui são colocados os elementos DOM -->
+	<!-- <svg id="chart"></svg>-->
+
+<script>
+
+	var disciplinas = {
+			key:"Disciplinas",
+			value:"Médias",
+			data:[
+				{key: "Lógica", 	    				value: 78},
+				{key: "Álgebra I", 						value: 71},
+				{key: "Orientação a Objetos", 			value: 67},
+				{key: "Estatística I",					value: 93},
+				{key: "Sistemas Operacionais I", 	    value: 59},
+				{key: "Física Experimental", 			value: 43},
+				{key: "Engenharia de Software", 		value: 88},
+				{key: "Estrutura de Dados",				value: 36},
+				{key: "Algoritmos I", 	    			value: 91},
+				{key: "Algoritmos II", 					value: 74},
+				{key: "Programação Java", 				value: 67},
+				{key: "Programação Python",				value: 75}
+			]
+		};
+	
+	
+	class SVG{
+	
+		constructor(id,w,h,proporcao, vertical){//w,h-porcentagem%
+			this.scale = proporcao;
+			this.w = w;//porcentagem da tela
+			this.h = h;//porcentagem da tela
+			this.vertical = vertical;
+			if(vertical){
+				this.margin = {
+					top: 58,
+					bottom: 150,
+					left: 80,
+					right: 40
+				};
+			}else{
+				this.margin = {
+					top: 58,
+					bottom: 80,
+					left: 200,
+					right: 40
+				};
+			}
+			this.object = d3.select("body").append("svg")
+						.attr("id", id);
+			this.chart = this.object.append("g")
+				.classed("display", true)
+				.attr("transform", "translate(" + this.margin.left + "," + this.margin.top + ")");
+			this.update();
+			
+		}
+		gwidth(){
+			
+			return this.width-this.margin.left-this.margin.right;
+		}
+		gheight(){
+			return this.height-this.margin.top-this.margin.bottom;
+		}
+		ppi() {
+			var elem = document.createElement('div');
+			elem.style.width = '1in';
+			document.body.appendChild(elem);
+			var ppi = elem.offsetWidth;
+			document.body.removeChild(elem);
+			return ppi;
+		}
+		mm(x){
+			return x*(25.4)/this.ppi();
+		}
+		update(){
+			    var width = this.w*window.innerWidth;
+				var height = this.h*window.innerHeight;
+			
+			    
+			if((width/height)<this.scale){
+				this.width = Math.round(width - this.mm(50));
+				this.height = Math.round(width/this.scale - this.mm(85));
+			}else{
+				this.width = Math.round(height*this.scale - this.mm(50));
+				this.height = Math.round(height - this.mm(85));
+			}
+			this.object.attr("width", this.width)
+			.attr("height", this.height);
+		}
+	}
+	
+	class Eixos{
+		constructor(vertical,data,svg){
+			this.svg = svg;
+			this.width = svg.gwidth();
+			this.data = data;
+			this.height = svg.gheight();
+			this.initialize=false;
+			this.reconstruct(vertical);
+			this.update();
+			this.drawAxis();
+		}
+		scaleLinear(x){
+			return d3.scale.linear()
+					.domain([0, d3.max(this.data.data, function(d){
+						return d.value;
+					})])
+					.range([(this.vertical?x:0), (this.vertical?0:x)]);
+		}
+		scaleOrdinal(x){
+			return d3.scale.ordinal()
+					.domain(this.data.data.map(function(entry){
+						return entry.key;
+					}))
+					.rangeBands([0, x]);
+		}
+		reconstruct(vertical){
+			this.vertical = vertical;
+			if(vertical){
+				// Definindo x com escala ordinal
+				this.x = this.scaleOrdinal(this.width);
+
+				// Definindo y com escala linear
+				this.y = this.scaleLinear(this.height);
+				
+				this.gridlines = d3.svg.axis()
+						.scale(this.y)
+						.tickSize(-this.width,0,0)
+						.tickFormat("")
+						.orient("left");
+			}else{
+				// Definindo y com escala ordinal
+				this.y = this.scaleOrdinal(this.height);
+
+				// Definindo x com escala linear
+				this.x = this.scaleLinear(this.width);
+				
+				this.gridlines = d3.svg.axis()
+						.scale(this.x)
+						.tickSize(-this.height,0,0)
+						.tickFormat("")
+						.orient("top");
+			}
+		}
+		update(){
+			this.reconstruct(this.vertical);
+			this.width = this.svg.gwidth();
+			this.height = this.svg.gheight();
+			this.reconstruct(this.vertical);
+			// Desenhando o eixo x
+			this.xAxis = d3.svg.axis()
+					.scale(this.x)
+					.orient("bottom");
+
+			// Desenhando o eixo y
+			this.yAxis = d3.svg.axis()
+					.scale(this.y)
+					.orient("left");
+			if(this.initialize)
+				this.updateAxis();
+		}
+		drawAxis(){
+			// Desenha as gridlines
+			this.svg.chart.append("g")
+				.call(this.gridlines)
+				.classed("gridline", true)
+				.attr("transform", "translate(0,0)")
+
+			if(this.vertical){
+				// Eixo x
+				this.svg.chart.append("g")
+					.classed("x axis", true)
+					.attr("transform", "translate(" + 0 + "," + this.height + ")")
+					.call(this.xAxis)
+						.selectAll("text")
+							.classed("x-axis-label", true)
+							.style("text-anchor", "end")
+							.attr("dx", -8)
+							.attr("dy", 8)
+							.attr("transform", "translate(0,0) rotate(-45)");
+				// Label y
+				this.svg.chart.select(".y.axis")
+					.append("text")
+					.classed("y label",true)
+					.attr("x", 30)
+					.attr("y", 0)
+					.style("text-anchor", "middle")
+					.attr("transform", "translate(-50," + this.height/2 + ") rotate(-90)")
+					.text(this.data.value);
+
+				// Label x
+				this.svg.chart.select(".x.axis")
+					.append("text")
+					.classed("x label",true)
+					.attr("x", 0)
+					.attr("y", 0)
+					.style("text-anchor", "middle")
+					.attr("transform", "translate(" + this.width/2 + ",145)")
+					.text(this.data.key);
+			}else{
+				// Eixo x
+				this.svg.chart.append("g")
+					.classed("x axis", true)
+					.attr("transform", "translate(" + 0 + "," + this.height + ")")
+					.call(this.xAxis);
+				// Label y
+				this.svg.chart.select(".y.axis")
+					.append("text")
+					.attr("x", 30)
+					.attr("y", 0)
+					.classed("y label", true)
+					.style("text-anchor", "middle")
+					.attr("transform", "translate(-50," + this.height/2 + ") rotate(-90)")
+					.text(this.data.key);
+
+				// Label x
+				this.svg.chart.select(".x.axis")
+					.append("text")
+					.classed("x label")
+					.classed("x label", true)
+					.attr("x", 0)
+					.attr("y", 0)
+					.style("text-anchor", "middle")
+					.attr("transform", "translate(" + (this.width/2) + ","+50+")")
+					.text(this.data.value);
+			}
+			// Eixo y
+			this.svg.chart.append("g")
+				.classed("y axis", true)
+				.attr("transform", "translate(0,0)")
+				.call(this.yAxis);
+
+			this.initialize  = true;
+		}
+		updateAxis(){
+			// Código alternativo caso as variáveis não seja inicializadas
+			this.svg.chart.selectAll("g.x.axis")
+				.transition()
+				.duration(500)
+				//.ease("bounce")
+				.delay(500)
+				.attr("transform", "translate(0,"+this.height+")")
+				.call(this.xAxis);
+			this.svg.chart.selectAll(".x-axis-label")
+				.style("text-anchor", "end")
+				.attr("dx", -8)
+				.attr("dy", 8)
+				.attr("transform", "translate(0,0) rotate(-45)");
+			this.svg.chart.selectAll("g.y.axis")
+				.transition()
+				.duration(500)
+				//.ease("bounce")
+				.delay(500)
+				.call(this.yAxis);
+				
+			this.svg.chart.selectAll("g.gridline")
+				.transition()
+				.duration(500)
+				.delay(500)
+				.call(this.gridlines)
+				.attr("transform", "translate(0,0)");
+				
+			this.svg.chart.select("g.x.axis.x.label")
+					.transition()
+					.duration(500)
+					.delay(500)
+					.attr("transform", "translate(" + (this.width/2) + ",50)");
+		}
+	}
+	
+	var vertical = true;
+	
+	var svg = new SVG("chart",1,1,4/3,vertical);
+	var eixos = new Eixos(vertical,disciplinas,svg);
+
+	window.addEventListener('resize', function(){
+		svg.update();
+		eixos.update();
+	});
+
+	//alert('Your PPI is ' + screenSize.ppi());
+	
+</script>
+</body>
+</html>

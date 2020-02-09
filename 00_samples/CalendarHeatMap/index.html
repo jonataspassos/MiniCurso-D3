@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<style>
+	</style>
+</head>
+
+<body>
+	<script src="../Repository/d3.v5.min.js"></script><!-- //d3js.org/  http://code.jquery.com/-->
+	<script src="../Repository/jquery-latest.min.js"></script>
+	<script src="../Repository/JSUtil.js"></script>
+	<script src="../Repository/Legend.js"></script>
+	<script src="../Repository/ToolTip.js"></script>
+	<script src="HeatMap.js"></script>
+	<script src="data.js"></script>
+	<div style="display: flex; flex-direction: row;padding: 20px;">
+
+		<div id="chart" style="width:90%;float:left;"></div>
+		<div id="legend" style="float:left;"></div>
+	</div>
+	</div>
+	<script>
+
+		var p = 0.8;
+	
+		var width = window.innerWidth*p;
+		var height = window.innerHeight*p;
+
+		var dataConfig = { 
+			/*year: "year",
+			month: "month",
+			day: "day",
+			hour: "hour",
+			value: "value"*/
+			init:{
+				year: 2018,
+				month: 0,
+				day: 1,	
+			},
+			end:{
+				year: 2018,
+				month: 3,
+				day: 5,	
+			}
+			};
+
+		var chartConfig = {
+			data:data,
+			parent:"#chart",
+			dataConfig:dataConfig,
+			dimensions:{ width: width, height: height },
+			chart:{calendar:false,hour:false},
+			layout:{
+				//margin:{ top: 20, bottom: 20, left: 20, right: 20 },
+				//padding:0.1,
+				//corner:0.1,
+				//
+				extrapolation:5,
+				//font_size:20,
+				/*axis:{
+					week:{lines:true,all:true},
+					day:{lines:false,all:true}
+				}*/
+				
+				//colors:d3.interpolateGreens,
+				
+				//colors:d3.interpolatePurples,
+				//colors:d3.interpolateBlues,
+				//colors:d3.interpolateGreys,
+				//colors:d3.interpolateOranges,
+				//colors:d3.interpolateReds,
+			},
+			calendar:{
+				//svg:false
+				//colors:d3.interpolateReds,
+				//texts:{center:"<value>"},
+				axis:{
+					vertical:{lines:false,all:false},
+					day:{lines:false,all:false}
+				}
+			},
+			hour:{
+				//svg:false,
+				model:4, //	4 || 12 || 24
+				//texts:{center:"<value>"},
+				axis:{
+					vertical:{lines:false,all:false},
+					day:{lines:false,all:false}
+				}
+			},
+			title:{
+				text:"Acessos de <init.day> de <init.month> até <end.day> de <end.month>",
+			},
+			cornerLabel:{
+				//text:"<day>",
+			},
+			centerLabel:{
+				text:"<value>",
+			},
+			tooltip:{
+				text:"Value: <value>\r\n Day: <this>"
+			},
+			interactions:{click:function(element,data){alert(data);console.log(data);}}
+			/*hour:{
+			//6-12 12-18 18-24 24-6
+			}*/
+		}
+
+		var calendarHeatMap = new CalendarHeatMap(chartConfig);
+
+		window.addEventListener('resize', function(){
+	    
+		calendarHeatMap.resize(window.innerWidth*p,window.innerHeight*p);
+	    
+	});
+
+	</script>
+</body>
+
+</html>

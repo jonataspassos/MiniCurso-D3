@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>Word Cloud Generator</title>
+
+<div id="vis"></div>
+
+<script src="../Repository/jquery-latest.min.js"></script>
+<script src="../Repository/d3.v5.min.js"></script>
+<script src="../Repository/d3.min.js"></script><!---->
+<script src="../Repository/JSUtil.js"></script>
+<script src="../Repository/ToolTip.js"></script>
+<script src="cloud.min.js"></script>
+<script>
+    var data = [{key: "s", value: 9},
+{key: "", value: 5},
+{key: "layout", value: 4},
+{key: "area", value: 4},
+{key: "retrieve", value: 3},
+{key: "bounding", value: 3},
+{key: "without", value: 3},
+{key: "step", value: 3},
+{key: "operation", value: 3},
+{key: "collision", value: 3},
+{key: "candidate", value: 3},
+{key: "data", value: 2},
+{key: "previously", value: 2},
+{key: "move", value: 2},
+{key: "perform", value: 2},
+{key: "hierarchical", value: 2},
+{key: "time", value: 2},
+{key: "32", value: 2},
+{key: "draw", value: 2},
+{key: "pixel", value: 2},
+{key: "possible", value: 2},
+{key: "separately", value: 2},
+{key: "expensive", value: 2},
+{key: "pixels", value: 2},
+{key: "even", value: 2},
+{key: "masks", value: 2},
+{key: "implementation", value: 2},
+{key: "simple", value: 2},
+{key: "detection", value: 2},
+{key: "larger", value: 2},
+{key: "whole", value: 2},
+{key: "placement", value: 2},
+{key: "comparing", value: 2},
+{key: "starting", value: 2},
+{key: "box", value: 2},
+{key: "large", value: 2},
+{key: "think", value: 2},
+{key: "version", value: 2},
+{key: "single", value: 2},
+{key: "tree", value: 2},
+{key: "always", value: 1},
+{key: "use", value: 1},
+{key: "overlap", value: 1},
+{key: "animations", value: 1},
+{key: "prevents", value: 1},
+{key: "browsers", value: 1},
+{key: "event", value: 1},
+{key: "loop", value: 1},
+{key: "blocking", value: 1},
+{key: "placing", value: 1},
+{key: "incredibly", value: 1},
+{key: "available", value: 1},
+{key: "GitHub", value: 1},
+{key: "open", value: 1},
+{key: "important", value: 1},
+{key: "Attempt", value: 1},
+{key: "place", value: 1},
+{key: "point", value: 1},
+{key: "usually", value: 1},
+{key: "near", value: 1},
+{key: "middle", value: 1},
+{key: "somewhere", value: 1},
+{key: "central", value: 1},
+{key: "horizontal", value: 1},
+{key: "line", value: 1},
+{key: "intersects", value: 1},
+{key: "source", value: 1},
+{key: "license", value: 1},
+{key: "one", value: 1},
+{key: "along", value: 1},
+{key: "increasing", value: 1},
+{key: "spiral", value: 1},
+{key: "Repeat", value: 1},
+{key: "intersections", value: 1},
+{key: "found", value: 1},
+{key: "hard", value: 1},
+{key: "part", value: 1},
+{key: "making", value: 1},
+{key: "d3cloud", value: 1},
+{key: "efficiently", value: 1},
+{key: "According", value: 1},
+{key: "Jonathan", value: 1},
+{key: "Feinberg", value: 1},
+{key: "le", value: 1},
+{key: "uses", value: 1},
+{key: "combination", value: 1},
+{key: "Note", value: 1},
+{key: "code", value: 1},
+{key: "boxes", value: 1},
+{key: "quadtrees", value: 1},
+{key: "achieve", value: 1},
+{key: "reasonable", value: 1},
+{key: "speeds", value: 1},
+{key: "Glyphs", value: 1},
+{key: "JavaScript", value: 1},
+{key: "isnt", value: 1},
+{key: "way", value: 1},
+{key: "converting", value: 1},
+{key: "Cloud", value: 1},
+{key: "glyph", value: 1},
+];
+
+    var dataconfig = {
+      data: data,
+      max:50,
+      font:"Impact",
+      spiral:"rectangular",// archimedean | rectangular
+      scale:"log",// scaleLinear | scaleSqrt | scaleLog
+      angles:{
+      from:0,
+      to:0,
+      n:1
+    },
+    dimensions:{
+      w:800,
+      h:400,
+    },
+    interactions:{
+      click:function(element,data){console.log(data),alert(d3.textData(data,"<text>: <value> acesso(s)"))}
+    },
+    tooltip:{
+      text:"<text>: <value> acesso(s)"
+    }
+    }
+    cloudWord(dataconfig,"#vis");
+</script>
+

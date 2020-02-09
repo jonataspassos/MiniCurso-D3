@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+
+.bar {
+  fill: steelblue;
+}
+
+.bar:hover {
+/*  fill: brown;*/
+}
+
+.axis--x path {
+  display: none;
+}
+
+</style>
+</head>
+<body>
+	<script src="../Repository/d3.v5.min.js"></script><!-- //  -->
+	<script src="../Repository/jquery-latest.min.js"></script>
+	<script src="../Repository/JSUtil.js"></script>
+	<script src="../Repository/Legend.js"></script>
+	<script src="../Repository/ToolTip.js"></script>
+	<script type="text/javascript" src="BarChartJS.js"></script>
+	<div style="display: flex; flex-direction: row;padding: 20px;">
+	
+		<div id="chart" style="width:90%;float:left;"></div>
+		<div id="legend"  style="float:left;">
+	</div>
+	</div>
+	<script>
+	
+	var p = 0.8;
+	
+	var width = window.innerWidth*p;
+	var height = window.innerHeight*p;
+	
+	var barChart;
+	
+	var data = [{State:"CA",	Under5Years:2704659,	v5to13Years:4499890,	v14to17Years:2159981,	v18to24Years:3853788,	v25to44Years:10604510,	v45to64Years:8819342,	v65YearsandOver:4114496	},
+		{State:"TX",	Under5Years:2027307,	v5to13Years:3277946,	v14to17Years:1420518,	v18to24Years:2454721,	v25to44Years:7017731,	v45to64Years:5656528,	v65YearsandOver:2472223	},
+		{State:"NY",	Under5Years:1208495,	v5to13Years:2141490,	v14to17Years:1058031,	v18to24Years:1999120,	v25to44Years:5355235,	v45to64Years:5120254,	v65YearsandOver:2607672	},
+		{State:"FL",	Under5Years:1140516,	v5to13Years:1938695,	v14to17Years:925060,	v18to24Years:1607297,	v25to44Years:4782119,	v45to64Years:4746856,	v65YearsandOver:3187797	},
+		{State:"IL",	Under5Years:894368,	v5to13Years:1558919,	v14to17Years:725973,	v18to24Years:1311479,	v25to44Years:3596343,	v45to64Years:3239173,	v65YearsandOver:1575308	},
+		{State:"PA",	Under5Years:737462,	v5to13Years:1345341,	v14to17Years:679201,	v18to24Years:1203944,	v25to44Years:3157759,	v45to64Years:3414001,	v65YearsandOver:1910571	}
+	];
+	
+	var data_ = [
+	    {key:"A"	,value:.08167,value2:.08167/2,value3:.08167/3,value4:.08167/4},
+		{key:"B"	,value:.01492,value2:.01492/2,value3:.01492/3,value4:.01492/4},
+		{key:"C"	,value:.02782,value2:.02782/2,value3:.02782/3,value4:.02782/4},
+		{key:"D"	,value:.04253,value2:.04253/2,value3:.04253/3,value4:.04253/4},
+		{key:"E"	,value:.12702,value2:.12702/2,value3:.12702/3,value4:.12702/4},
+		{key:"F"	,value:.02288,value2:.02288/2,value3:.02288/3,value4:.02288/4},
+		{key:"G"	,value:.02015,value2:.02015/2,value3:.02015/3,value4:.02015/4},
+		{key:"H"	,value:.06094,value2:.06094/2,value3:.06094/3,value4:.06094/4},
+		{key:"I"	,value:.06966,value2:.06966/2,value3:.06966/3,value4:.06966/4},
+		{key:"J"	,value:.00153,value2:.00153/2,value3:.00153/3,value4:.00153/4},
+		{key:"K"	,value:.00772,value2:.00772/2,value3:.00772/3,value4:.00772/4},
+		{key:"L"	,value:.04025,value2:.04025/2,value3:.04025/3,value4:.04025/4},
+		{key:"M"	,value:.02406,value2:.02406/2,value3:.02406/3,value4:.02406/4},
+		{key:"N"	,value:.06749,value2:.06749/2,value3:.06749/3,value4:.06749/4},
+		{key:"O"	,value:.07507,value2:.07507/2,value3:.07507/3,value4:.07507/4},
+		{key:"P"	,value:.01929,value2:.01929/2,value3:.01929/3,value4:.01929/4},
+		{key:"Q"	,value:.00095,value2:.00095/2,value3:.00095/3,value4:.00095/4},
+		{key:"R"	,value:.05987,value2:.05987/2,value3:.05987/3,value4:.05987/4},
+		{key:"S"	,value:.06327,value2:.06327/2,value3:.06327/3,value4:.06327/4},
+		{key:"T"	,value:.09056,value2:.09056/2,value3:.09056/3,value4:.09056/4},
+		{key:"U"	,value:.02758,value2:.02758/2,value3:.02758/3,value4:.02758/4},
+		{key:"V"	,value:.00978,value2:.00978/2,value3:.00978/3,value4:.00978/4},
+		{key:"W"	,value:.02360,value2:.02360/2,value3:.02360/3,value4:.02360/4},
+		{key:"X"	,value:.00150,value2:.00150/2,value3:.00150/3,value4:.00150/4},
+		{key:"Y"	,value:.01974,value2:.01974/2,value3:.01974/3,value4:.01974/4},
+		{key:"Z"	,value:.00074,value2:.00074/2,value3:.00074/3,value4:.00074/4}
+		];
+
+	var chartConfig = {
+		name:"BarChart",
+		parent:"#chart",
+		svg:false,
+		dataConfig: /*{ordinal:"key",linear:["value","value4","value3","value2"]}*/{
+		    ordinal:"State",//"key",	//string
+		    linear:["Under5Years","v5to13Years","v14to17Years","v25to44Years","v18to24Years","v45to64Years","v65YearsandOver"]//["value","value4","value3","value2"]//["value","value4","value3","value2"]// string || vector String
+		}/**/,
+		data:data,// vector
+		dimensions:{
+		    width: width,
+		    height: height,
+		    
+		},
+		layout:{
+		    horizontal:false,
+		    corner:0,
+		    view:"group",//"group" || "bullet" || "stack"
+		    orderBy: {row:"key",grow:true},
+		    padding:0.1,
+		    margin:{
+			top : 20,
+			right : 20,
+			bottom : 30,
+			left : 40
+		    },
+		    divisions:{
+			grid:10,
+			axis:10,
+		    },
+		    format:{
+			type:"s",// e/s/%
+			unit:"",//	m/cm/L/s...
+		    },
+		    alias:
+		    /*{ordinal:"key",linear:["value","value4","value3","value2"]}*/{
+			ordinal:"State",//"key",	//string
+			linear:["Under 5 Years","5 to 13 Years","14 to 17 Years","25 to 44 Years","18 to 24 Years","45 to 64 Years","65 Years and Over"],//["value","value4","value3","value2"]//["value","value4","value3","value2"]// string || vector String
+		    }/**/,
+		    colors: ["#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#a05d56", "#d0743c", "#ff8c00"]//d3.schemeCategory10//[]
+		},
+		bulletConfig:{
+		    base:[2,6],//vector with index of dataConfig.linear vector
+		    mark:[4],
+		    refer:[1,0]
+		},
+		textValueConfig: { // single and bullet
+		    text: "<_value>",
+		    color: "#FFF",
+		    font: {name:"sans-serif",size: 12},
+		    position:{dx: "0.5em", dy: "-0.5em"},
+		},
+		titleConfig:{
+		    text: "Frequency by Age in each <ordinal> ",
+		    color: {text:"#000"},
+		    font: {name:"sans-comic",size: 50},
+		    position:{align: "start"},//start middle end
+		},
+		tooltip:{
+		    text:"Estado: <_key>\n"+
+		    	"<_label>: <_value>"
+		    
+		    
+		    		/*"Estado: <State>\n" +
+		    		"Under 5 Years: <Under5Years>\n" +
+		    		"5 to 13 Years: <v5to13Years>\n" +
+		    		"14 to 17 Years: <v14to17Years>\n" +
+		    		"18 to 24 Years: <v18to24Years>\n" +
+		    		"25 to 44 Years: <v25to44Years>\n" +
+		    		"45 to 64 Years: <v45to64Years>\n" +
+		    		"65 Years and Over: <v65YearsandOver>\n"
+			/*"Letra: <key>\nFrequência: <value>\nFrequência2: <value2>\n"+
+			"Frequência3: <value3>\nFrequência4: <value4>\n"*/
+		 //All configs of toolTip
+		},
+		legend:{
+		  //svg:false,
+		  //parent:"#legend"
+		},
+		interactions:{
+		    click: function(element,data){
+					var text = "Estado: <State>\n" +
+						"<_label>: <_value>\n"+
+						"All:\n"+
+			    		"Under 5 Years: <Under5Years>\n" +
+			    		"5 to 13 Years: <v5to13Years>\n" +
+			    		"14 to 17 Years: <v14to17Years>\n" +
+			    		"18 to 24 Years: <v18to24Years>\n" +
+			    		"25 to 44 Years: <v25to44Years>\n" +
+			    		"45 to 64 Years: <v45to64Years>\n" +
+			    		"65 Years and Over: <v65YearsandOver>\n";
+			    	data = barChart.alterData(element,data);
+					alert(d3.textData(data,text));},
+		    mouseover: function(element,data){},
+		    mousemove: function(element,data){},
+		    mouseout: function(element,data){}
+		},
+	}
+	
+	barChart = new BarChart(chartConfig);
+	
+	var buttons = ["bullet","group","stack","horizontal","vertical"];
+		
+		barChart.buttons = d3.select("body").append("div").attr("id","buttons")
+			.selectAll("button").data(buttons).enter().append("button")
+			.attr("id",function(d){return "btn-"+d;})
+			.on("click",function(d){barChart.reView(d);})
+			.text(function(d){return d;});
+	
+	window.addEventListener('resize', function(){
+	    
+	    barChart.resize(window.innerWidth*p,window.innerHeight*p);
+	    
+	    width2 = window.innerWidth*(1-p);
+		height2 = window.innerHeight*(1-p);
+	    
+	});
+    </script>
+</body>
+</html>

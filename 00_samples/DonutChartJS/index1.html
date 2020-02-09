@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+</style>
+	<script src="../Repository/d3.v5.min.js"></script>
+	<script src="../Repository/jquery-latest.min.js"></script>
+	<script src="../Repository/JSUtil.js"></script>
+	<script src="../Repository/ToolTip.js"></script> 
+	<script src="DonutChart.js"></script>
+</head>
+<body>
+	
+	<div id="chart"></div>
+	<script>
+	
+	var p = 0.5;
+	
+	var width = window.innerWidth*p;
+	var height = window.innerHeight*p;
+	
+	var disciplinas = [
+		{key: "Lógica", 	    				value: 78,obs: "fui bem"},
+		{key: "Álgebra I", 						value: 71,obs: "fui bem"},
+		{key: "Orientação a Objetos", 			value: 67,obs: "fui mal"},
+		{key: "Estatística I",					value: 93,obs: "fui muito bem"},
+		{key: "Sistemas Operacionais I", 	    value: 59,obs: "fui mal"},
+		{key: "Física Experimental", 			value: 43,obs: "fui muito mal"},
+		{key: "Engenharia de Software", 		value: 88,obs: "fui bem"},
+		{key: "Estrutura de Dados",				value: 36,obs: "fui muito mal"},
+		{key: "Algoritmos I", 	    			value: 91,obs: "fui muito bem"},
+		{key: "Algoritmos II", 					value: 74,obs: "fui bem"},
+		{key: "Programação Java", 				value: 67,obs: "fui mal"},
+		{key: "Programação Python",				value: 75,obs: "fui bem"}
+	];
+	
+	var chartConfig = {
+		name:"DonutChart",
+		parent:{id:"#chart"},
+		columnData:"value",
+		columnScale:"key",
+		data:disciplinas,
+		dimensions:{
+		    width: width,
+		    height: width,
+		},
+		layout:{
+			//orderBy:{row:"value",grow:false}
+		},
+		time:{
+		    delay:1500
+		},
+		font:{
+		    size:20
+		},
+		slicesConfig: {
+			time:{delay:500,duration:1000},
+			colData:["key","value","obs"],//
+		},
+		textValueConfig: { 
+			text: "<value>",
+		},
+		labelConfig:{ 
+			text: "<key>",
+		},
+		midleCaption:{ 
+			text: "Notas",
+			font: {size: 100},
+		},
+		titleConfig:{ 
+			text: "Jonatas de Castro Oliveira Passos",
+			font: {size: 100},
+			position:{align:"middle"}
+		},
+		tooltipConfig:{
+		    name: "notas",
+		    parent: "svg",// data: data,
+			text:"Materia: <key>\nNota: <value>",//"\n\n Eu acho que <obs> nessa materia",
+			font:{align:"middle"}
+		},
+		interactions:{
+		    onClick:function(element,d){
+				var string = "Materia: <key>\nNota: <value>\n\n Eu acho que <obs> nessa materia";
+				string = d3.textData(d.data,string);
+				alert(string);
+		    }
+		}
+		
+		}
+
+		var donut = new DonutChart (chartConfig);
+	
+		window.addEventListener('resize', function(){
+		    donut.resize(window.innerWidth*p,window.innerHeight*p);
+		});
+	
+    </script>
+</body>
+</html>

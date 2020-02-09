@@ -1,0 +1,50 @@
+<head>
+    <title>Learn D3</title>
+    <style>
+        .texts {
+            width: 600px;
+        }
+    </style>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+</head>
+
+<body>
+    <h1>Learn D3 - Data Driven Documents</h1>
+    <div class="texts">
+        <p>Como diz a tradução literal, documentos orientados a dados, o D3 é uma biblioteca que auxilia na manipulação
+            de
+            documentos (alterando, adicionando ou removendo elementos) de forma versátil e interativa.</p>
+        <p>Este tutorial auxiliará na familiarização da ferramenta, e trará dicas de como seguir no desenvolvimento de
+            gráficos e outras soluções utilizando o D3</p>
+        <h3>Exemplos de utilização</h3>
+        <p id="sample"></p>
+        <h3>Links sugeridos</h3>
+        <p id="link"></p>
+        <h3>Referências</h3>
+        <p id="ref"></p>
+    </div>
+
+    <script>
+        var sample = [
+            { label: "Bar Chart JS", link: "./00_samples/BarChartJS/index.html" },
+            { label: "Bubble Chart", link: "./00_samples/BubbleChart/index.html" },
+            { label: "Calendar HeatMap", link: "./00_samples/CalendarHeatMap/index.html" },
+            { label: "Circuitos", link: "./00_samples/Circuitos/index.html" },
+            { label: "Donut Chart JS", link: "./00_samples/DonutChartJS/index.html" },
+            { label: "EngSoftware Apresentação", link: "./00_samples/EngSoftware/index.html" },
+            { label: "Gantt Chart", link: "./00_samples/GanttChart/index.html" },
+            { label: "Logica", link: "./00_samples/Logica/index.html" },
+            { label: "Word Cloudy", link: "./00_samples/WordCloudy/index.html" }
+        ];
+        var link = [
+            { label: "", link: "" }
+        ];
+        var ref = [
+            { label: "", link: "" }
+        ];
+
+        d3.select("#sample").selectAll("p").data(sample).enter()
+            .append("a").attr("href", function (d) { return d.link })
+            .text(function (d) { return d.label+" , " });
+    </script>
+</body>

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+</style>
+<script src="../Repository/d3.v5.min.js"></script>
+		<script src="../Repository/jquery-latest.min.js"></script>
+		<script src="../Repository/JSUtil.js"></script>
+		<script src="../Repository/ToolTip.js"></script> 
+		<script src="DonutChart.js"></script>
+</head>
+<body>
+	
+	<div style="display: flex; flex-direction: row;padding: 20px;">
+	
+	<div id="chart" style="width:70%;float:left;"></div>
+	<div style="width:30%;float:left;">
+		<div style="width:100%; height:50px;"></div>
+		<div id="infoChart" style="width:100%;float:left;"></div>
+		
+	</div>
+	</div>
+	
+	<script>
+	
+var p = 0.7;
+	
+	var width = window.innerWidth*p;
+	var height = window.innerHeight*p;
+	
+	var width2 = window.innerWidth*(1-p);
+	var height2 = window.innerHeight*(1-p);
+	
+	var disciplinas = [
+		{key: "Lógica", 	    				value: 78,obs: "fui bem"},
+		{key: "Álgebra I", 						value: 71,obs: "fui bem"},
+		{key: "Orientação a Objetos", 			value: 67,obs: "fui mal"},
+		{key: "Estatística I",					value: 93,obs: "fui muito bem"},
+		{key: "Sistemas Operacionais I", 	    value: 59,obs: "fui mal"},
+		{key: "Física Experimental", 			value: 43,obs: "fui muito mal"},
+		{key: "Engenharia de Software", 		value: 88,obs: "fui bem"},
+		{key: "Estrutura de Dados",				value: 36,obs: "fui muito mal"},
+		{key: "Algoritmos I", 	    			value: 91,obs: "fui muito bem"},
+		{key: "Algoritmos II", 					value: 74,obs: "fui bem"},
+		{key: "Programação Java", 				value: 67,obs: "fui mal"},
+		{key: "Programação Python",				value: 75,obs: "fui bem"}
+	];
+	
+	var chartConfig = {
+	    name : "DonutChart",
+	    parent : {
+		id : "#chart"
+	    },
+	    columnData : "value",
+	    columnScale : "key",
+	    data : disciplinas,
+	    dimensions : {
+		width : width,
+		height : height,
+	    },
+	    layout : {
+	    //orderBy:{row:"value",grow:false}
+	    },
+	    time : {
+		delay : 1500
+	    },
+	    font : {
+		size : 20
+	    },
+	    slicesConfig : {
+		time : {
+		    delay : 500,
+		    duration : 1000
+		},
+		colData : [ "key", "value", "obs" ],//
+	    },
+	    textValueConfig : {
+		text : "<value>",
+	    },
+	    labelConfig : {
+		text : "<key>",
+	    },
+	    midleCaption : {
+		text : "Notas",
+		font : {
+		    size : 100
+		},
+	    },
+	    titleConfig : {
+		text : "Jonatas de Castro Oliveira Passos",
+		font : {
+		    size : 100
+		},
+		position : {
+		    align : "middle"
+		}
+	    },
+	    tooltipConfig : {
+		name : "notas",
+		parent : "svg",// data: data,
+		text : "Materia: <key>\nNota: <value> \n\n...clique para mais\ninformações...",//"\n\n Eu acho que <obs> nessa materia",
+		font : {
+		    //align : "middle"
+		}
+	    },
+	    interactions : {
+		onClick : function(element,d) {
+		    
+		    var string = "Materia: <key>\nNota: <value>\n\n Eu acho que <obs> nessa materia";
+		   // var data = JSON.parse($(this).attr("data"));
+		    string = d3.textData(d.data, string);
+		    var xCo,yCo; 
+			var info =d3.select("#infoChart");
+			if(info._groups[0][0].childNodes[0] && JSON.parse($(info._groups[0][0].childNodes[0].childNodes[0]).attr("data")).key == d.data.key)
+				return;
+			info.select("svg").transition().duration(1000).attr("width",0);
+			
+			var string = "Materia: <key> \nNota: <value> \n\nEu acho que <obs> nessa materia";
+			//var data = JSON.parse($(this).attr("data"));
+			string = d3.textData(d.data, string);
+			
+			info.text("");
+			string = string.split("\n");
+			
+			/*.attr("transform", function(d) {
+		            var mouseCoords = d3.mouse(this.parentNode);
+		            xCo = mouseCoords[0];
+		            yCo = mouseCoords[1];            
+		            return "translate(" + xCo + "," + yCo + ")";
+		        })*/
+		       ;
+			var fill = $(element).attr("style");
+			fill = fill.substr(fill.search("fill"),fill.length);
+			fill = fill.substr(0,fill.search(";"));
+			fill = fill.replace("fill:","").replace(" ","");
+			
+			referDonutChartConfig.data[0] = d.data;
+			referDonutChartConfig.data.refer  = 100;
+			referDonutChartConfig.color.slices[0] = fill;
+			new ReferDonutChart(referDonutChartConfig);
+			var text = info.selectAll("p").data(string).enter().append("p").text(function(d){return d;});//.innerText(string);
+		}
+	    }
+
+	}
+
+	var referDonutChartConfig = {
+	    name : "ReferDonutChart",
+	    parent : "#infoChart",
+	    columnData : "value",
+	    columnScale : "key",
+	    data : [],
+	    dimensions : {
+		width : width2,
+		height : height2,
+		padding : 5,
+	    },
+	    layout : {
+		thichness : 0.7,
+		corner : 1,
+	    },
+	    color : {
+		slices : [],
+		text : "#000",
+		background : "#DDD",
+	    },
+	    font : {
+		size : 20,
+		name : "sans-serif",
+	    },
+	    time : {
+		duration : 1000,
+		delay : 500,
+		proportional : false,
+	    },
+	    midleCaption : {
+		text : "<value>",
+		font : {
+		    name : "sans-comic",
+		    size : 20
+		},
+	    },
+	    titleConfig : {
+	    //text: "<key>"
+	    },
+	    tooltipConfig : {
+		name : "info-notas",
+		parent : "#svg-ReferDonutChart",// data: data,
+		text : "Materia: <key>\nNota: <value>"
+	    },
+	    interactions : {
+		onClick : function(d) {
+
+		    var string = "Materia: <key>\nNota: <value>";
+		    var data = JSON.parse($(this).attr("data"));
+		    string = d3.textData(data, string);
+		    alert(string);
+		}
+	    }
+
+	}
+
+	var donut = new DonutChart(chartConfig);
+	
+	window.addEventListener('resize', function(){
+	    
+	    donut.resize(window.innerWidth*p,window.innerHeight*p);
+	    
+	    width2 = window.innerWidth*(1-p);
+		height2 = window.innerHeight*(1-p);
+	    
+	});
+	
+	/*var infoSvg = d3.select("#infoChart").append("svg").attr("id","infoChartSvg")
+			.attr("width",200).attr("height",200);*///.attr("transform","translate(-500,-500)");
+	
+    </script>
+</body>
+</html>

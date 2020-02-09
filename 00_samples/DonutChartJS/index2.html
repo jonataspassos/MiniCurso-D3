@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+</style>
+</head>
+<body>
+		<script src="../Repository/d3.v5.min.js"></script>
+		<script src="../Repository/jquery-latest.min.js"></script>
+		<script src="../Repository/JSUtil.js"></script>
+		<script src="../Repository/ToolTip.js"></script> 
+		<script src="DonutChart.js"></script>
+	<!-- <script src="/Testes/source/palette.js"></script> -->
+	<div id="chart"></div>
+	<script>
+	
+var p = 1;
+	
+	var width = window.innerWidth*p;
+	var height = window.innerHeight*p;
+	
+	var disciplinas = [
+		{key: "Lógica", 	    				value: 10,obs: "fui bem"},
+		{key: "Álgebra I", 						value: 71,obs: "fui bem"},
+		{key: "Orientação a Objetos", 			value: 67,obs: "fui mal"},
+		{key: "Estatística I",					value: 93,obs: "fui muito bem"},
+		{key: "Sistemas Operacionais I", 	    value: 59,obs: "fui mal"},
+		{key: "Física Experimental", 			value: 43,obs: "fui muito mal"},
+		{key: "Engenharia de Software", 		value: 88,obs: "fui bem"},
+		{key: "Estrutura de Dados",				value: 36,obs: "fui muito mal"},
+		{key: "Algoritmos I", 	    			value: 91,obs: "fui muito bem"},
+		{key: "Algoritmos II", 					value: 74,obs: "fui bem"},
+		{key: "Programação Java", 				value: 67,obs: "fui mal"},
+		{key: "Programação Python",				value: 75,obs: "fui bem"}
+	];
+	
+	disciplinas.refer = 100;
+	
+	var referDonutChartConfig = {
+		name:"ReferDonutChart",
+		parent:"#chart",
+		columnData:"value",
+		columnScale:"key",
+		data: disciplinas,
+		dimensions:{
+		    width:width,
+		    height:height,
+		    padding:5,
+		},
+		layout:{
+			thichness:0.7,
+		 	corner:1, 	
+		},
+		color:{
+		    slices:d3.schemeCategory10,//[],
+		    text:"#000",
+		    background:"#DDD",
+		},
+		font:{
+		    size:20,
+			name:"sans-serif",
+		},
+		time:{
+		  duration:1000,
+		  delay:500,
+		  proportional:false,
+		},
+		midleCaption:{ 
+			text: "<value>",
+			font: {name:"sans-comic",size: 20},
+		},
+		titleConfig:{ 
+			//text: "<key>"
+		},
+		tooltipConfig:{
+		    name: "notas",
+		    parent: "svg",// data: data,
+			text:"Materia: <key>\nNota: <value>"
+		},
+		interactions:{
+		    onClick:function(d){
+			var string = "Materia: <key>\nNota: <value>\n\n Eu acho que <obs> nessa materia";
+			string = d3.textData(d[0],string);
+			alert(string);
+		    }
+		}
+		
+	}
+	
+	
+	
+	var referDonutChart = new ReferDonutChart(referDonutChartConfig);
+	
+	window.addEventListener('resize', function(){
+	    referDonutChart.resize(window.innerWidth*p,window.innerHeight*p);
+	});
+	
+    </script>
+</body>
+</html>

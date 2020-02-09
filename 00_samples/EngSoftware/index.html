@@ -1,0 +1,424 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Montanha Russa</title>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="jumbotron">
+        <h1 class="display-4">Montanha Russa</h1>
+        <p class="lead">Este é o modelo de desenvolvimento de projetos.</p>
+        <hr class="my-4">
+        <h6>Integrantes do trabalho:</h6>
+        <div style="padding-left:20px">
+            <p>José Adolfo;</br>
+                Jorge Lucas;</br>
+                Jorge;</br>
+                Jonatas Passos;</br>
+                Juliana Firmo;</br>
+                Kemuel Rocha;</br>
+                Lucas Barros;</br>
+            </p>
+        </div>
+        <a class="btn btn-primary btn-lg" href="#Modelo" role="button" onclick="inicio()">Ver Modelo</a>
+    </div>
+    <a name="Modelo">
+        <div>
+            <h2>Montanha Russa</h2>
+            <div style="padding-left:20px;">
+                <svg id="modelChart" width="800" height="400"></svg>
+            </div>
+            <div id="SlidesEngSoftware" class="carousel slide" data-ride="carousel" style="padding-top:10px;padding-left:20px;height:230px">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+
+                    </div>
+                    <div class="carousel-item">
+                        <h5>Início</h5>
+                        <p>Neste momento, dá-se início ao projeto. É quando o projetista é </br>
+                            procurado pelo cliente demonstrando interesse.
+                        </p>
+                    </div>
+                    <div class="carousel-item">
+                        <h5>Primeiro Ciclo: Solicitação</h5>
+                        <p>Este ciclo representa todo o período de análise de <strong>requisitos</strong>,</br>
+                            os quais são exemplificados atraves de <strong>protótipos</strong> para que o</br>
+                            cliente e a equipe de projetistas entrem em unidade de pensa</br>
+                            mento. Esse ciclo se repete quantas vezes forem necessárias,</br>
+                            até que o objetivo apresentado seja atendido.
+                        </p>
+                    </div>
+                    <div class="carousel-item">
+                        <h5>Segundo Ciclo: Desenvolvimento</h5>
+                        <p>Neste ciclo, o projetista desenvolve o <strong>modelo</strong> do projeto.</br>
+                            Em seguida, a equipe de desenvolvedores, a partir do pro</br>
+                            jeto, desenvolve o <strong>produto</strong> própriamente dito. Essa fase </br>
+                            descrita por um circulo devido aos <strong>testes</strong> que são conti-</br>
+                            nuamente feitos para garantir o funcionamento correto do</br>
+                            produto. Por isso, esse ciclo só acaba quando a garantia</br>
+                            do perfeito funcionamento técnico do produto.
+                        </p>
+                    </div>
+                    <div class="carousel-item">
+                        <h5>Terceiro Ciclo: Validação</h5>
+                        <p>Esse ciclo é quando o projetista retoma o contato com</br>
+                            o cliente e <strong>apresenta</strong> o produto desenvolvido. Esse mo-</br>
+                            mento é chamado de validação porque o cliente poderá </br>
+                            confirmar se todos os requisitos que ele solicitou es</br>
+                            tão devidamente implementados, <strong>ajustando</strong> onde for neces-</br>
+                            sário.
+                        </p>
+                    </div>
+                    <div class="carousel-item">
+                        <div style="background-color: salmon; width:500px;padding:5px">
+                            <h5 style="background-color: red">Aviso</h5>
+                            <div style="padding-left:10px">
+                                <p>Essa fase pode ser considerada como uma brecha no desen-</br>
+                                    volvimento. Pode ser que o usuário queira fazer altera-</br>
+                                    ções fora do acordado. Por causa disso, para garantir o</br>
+                                    que é permitido ou não permitido alterar, os requisitos</br>
+                                    precisam estar devidamente documentados e acordados para</br>
+                                    não haver retorno de fases.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <h5>Entrega</h5>
+                        <p>Por fim o produto é liberado para o cliente definitivamente.
+                        </p>
+                    </div>
+                    <div class="carousel-item">
+                        <h5>Considerações</h5>
+                        <p>
+                            Peceba que enquanto a visão horizontal representa a </br>
+                            linha do tempo, a visão horizontal apresenta os atores</br>
+                            no decorrer do projeto. Na parte de baixo, são as inte-</br>
+                            rações com o cliente. Já a parte de cima, representa o </br>
+                            trabalho dos desenvolvedores. A linha que divide no meio</br>
+                            representa o trabalho do Gerente de projeto, mediando</br>
+                            o cliente e os desenvolvedores, guiando e regendo cada parte.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                    <li class="page-item"><a class="page-link" href="#Modelo"onclick="prevslide()">Previous</a></li>
+                    <li class="page-item"><a class="page-link" href="#Modelo"onclick="nextslide()">Next</a></li>
+                </ul>
+            </nav>
+        </div>
+    </a>
+    <script>
+        $('#irpara').click(inicio);
+        var text_slides = $('#SlidesEngSoftware');
+
+        var slide_current = -1;
+
+        var $color1 = "#FFE74C", $color2 = "#7DD856", $color3 = "#414F70", $color4 = "#C13F60", $color5 = "#C2B2B4";
+        var svg = d3.select("svg");//.attr("width", window.innerWidth).attr("height", window.innerWidth / 2);
+
+        var width = +svg.attr("width") - 60;
+        var height = +svg.attr("height") - 40;
+        var espessura = height / 20;
+        var font = espessura * 5 / 6;
+
+
+        var data_pontos = [
+            { nome: "Início", position: { x: 0, y: 0 }, rel: { dx: 0, dy: -1.5 } },
+            { nome: "Requisitos", position: { x: .25, y: 0 }, rel: { dx: 0, dy: -1.5 } },
+            { nome: "Prototipação", position: { x: .25, y: .9 }, rel: { dx: 0, dy: 2.2 } },
+            { nome: "Modelagem", position: { x: .50, y: 0 }, rel: { dx: 0, dy: 2.2 } },
+            { nome: "Produção", position: { x: .5925, y: -.675 }, rel: { dx: 1.2, dy: -1.5 } },
+            { nome: "Testes", position: { x: .4075, y: -.675 }, rel: { dx: -1, dy: -1.5 } },
+            { nome: "Apresentação", position: { x: .75, y: 0 }, rel: { dx: 0, dy: -1.5 } },
+            { nome: "Ajustes", position: { x: .75, y: .9 }, rel: { dx: 0, dy: 2.2 } },
+            { nome: "Entrega", position: { x: 1, y: 0 }, rel: { dx: 0, dy: -1.5 } },
+        ];
+        var data_captions = [
+            { nome: "Solicitação", position: { x: .25, y: .45 }, color: $color2, },
+            { nome: "Desenvolvimento", position: { x: .50, y: -.45 }, color: $color3, },
+            { nome: "Validação", position: { x: .75, y: .45 }, color: $color4, },
+        ];
+        var data_tittles = [
+            { nome: "Cliente", position: { x: -.1, y: .9 }, },
+            { nome: "Desenvolvedores", position: { x: -.1, y: -.9 }, },
+            { nome: "Gerente de projeto", position: { x: -.1, y: -.3 }, },
+        ];
+
+        var configuracao_pontos = [
+            { r: .05, color: "#777" },
+            { r: .04, color: $color5 },
+        ];
+        var pie = d3.pie().value(1)([1]);
+        var pie2 = d3.pie().value(function (d) { return d })([1, 1]);
+        pie2.pop();
+        var pie3 = d3.pie().value(function (d) { return d })([1, 2]);
+        pie3[0].endAngle -= pie3[0].startAngle
+        pie3[0].startAngle = 0;
+        pie3.pop();
+        var pie23 = d3.pie().value(function (d) { return d })([2, 1]);
+        pie23.pop();
+
+        var g, linhaEngenheiro, captions, path, pontos, arc;
+
+        var inicio = function () {
+            console.log("iniciei");
+            slide_current = -1;
+            text_slides.carousel(0);
+            text_slides.carousel('pause');
+            svg.attr("width", window.innerWidth*2/3).attr("height", window.innerWidth *2/6);
+            width = +svg.attr("width") - 60;
+            height = +svg.attr("height") - 40;
+            espessura = height / 20;
+            font = espessura * 5 / 6;
+
+            arc = d3.arc()
+                .outerRadius(height / 4)
+                .innerRadius(height / 4 - espessura)
+                .cornerRadius(espessura / 2)
+
+            svg.text("");
+
+            g = svg.append("g")
+                .attr("transform", "translate(30," + (height / 2) + ")");
+
+            /*g.selectAll(".background-rect").data([$color3,$color4]).enter().append("rect").attr("class","background-rect")
+                .attr("transform",function(d,i){return "translate(-30,"+(i==0?-(height+40)/2:0)+")"})
+                .attr("height",(height+40)/2)
+                .attr("width",(width+60))
+                .attr("fill",function(d){return d})
+                .attr("opacity",0.5);*/
+
+            g.selectAll(".tittle").data(data_tittles).enter().append("text").attr("class","tittle")
+                .attr("font-size",function(d,i){return i<2?2*espessura:espessura})
+                .attr("fill","#FFF")
+                .attr("dy", ".5em")
+                .attr("transform",function(d){return "translate("+d.position.x*width/2+","+d.position.y*height/2+")";})
+                .text(function(d){return d.nome});
+
+            linhaEngenheiro = g.append("g")
+                .attr("transform", "translate(0," + (-espessura / 2) + ")");
+            linhaEngenheiro
+                .append("rect")
+                .attr("height", espessura)
+                .attr("width", 0)
+                .attr("fill", $color1)
+                .attr("rx", height / 40)
+                .attr("ry", height / 40);
+            captions = g.selectAll(".captions").data(data_captions).enter().append("g").attr("class", "captions")
+                .attr("id", function (d, i) { return "caption-" + i })
+                .attr("transform", function (d) { return "translate(" + d.position.x * width + "," + d.position.y * height / 2 + ")" });
+            captions.append("text")
+                .attr("font-size", 0)
+                .attr("style", "font-weigth:bold")
+                .attr("text-anchor", "middle")
+                .attr("dy", ".5em")
+                .text(function (d) { return d.nome });
+
+            path = captions.attr("fill", function (d) { return d.color })
+                .selectAll("g").data(pie).enter()
+                .append("g")
+                .attr("id", function (d, i) { return "path-" + i })
+                .append("path")
+                .each(function () { this._current = { startAngle: 0, endAngle: 0 }; });
+            pontos = g.selectAll(".pontos").data(data_pontos).enter().append("g").attr("class", "pontos")
+                .attr("id", function (d, i) { return "ponto-" + i })
+                .attr("transform", function (d) { return "translate(" + d.position.x * width + "," + d.position.y * height / 2 + ")" });
+            pontos.selectAll("circle").data(configuracao_pontos).enter().append("circle")
+                .attr("fill", function (d) { return d.color })
+                .attr("r", function (d) { return 0 });
+            pontos.append("text")
+                .attr("font-size", 0)
+                .attr("dy", function (d) { return "" + d.rel.dy + "em" })
+                .attr("dx", function (d) { return "" + d.rel.dx + "em" })
+                .attr("text-anchor", "middle")
+                .text(function (d) { return d.nome; })
+        }
+
+        var slides = [
+/*1*/       function () {
+                inicio();
+                
+                slide_current = 0;
+                var ponto = g.select("#ponto-0");
+                ponto.selectAll("circle").data(configuracao_pontos)
+                    .transition().duration(500)
+                    .attr("r", function (d) { return d.r * height })
+                ponto.select("text").transition().delay(250).duration(500).attr("font-size", font)
+                text_slides.carousel(1);
+                text_slides.carousel('pause');
+            },
+/*2*/       function () {
+                var time = 0;
+                slide_current = 1;
+                linhaEngenheiro.select("rect").transition().delay(time).duration(200).attr("width", .25 * width);
+                time += 200;
+
+                var ponto = g.select("#ponto-1");
+                ponto.selectAll("circle").data(configuracao_pontos)
+                    .transition().delay(time).duration(500)
+                    .attr("r", function (d) { return d.r * height })
+                ponto.select("text").transition().delay(time + 250).duration(500).attr("font-size", font);
+                time += 750;
+
+                time += 500;
+
+                var path = g.select("#caption-0").select("g").select("path");
+                path.data(pie)
+                    .transition()
+                    .duration(2000)
+                    .delay(time)
+                    .attrTween("d", function (d) {
+                        var interpolate = d3.interpolate(this._current, d);
+                        this._current = interpolate(0);
+                        return function (t) {
+                            return arc(interpolate(t));
+                        };
+                    });
+                ponto = g.select("#ponto-2");
+                ponto.selectAll("circle").data(configuracao_pontos)
+                    .transition().delay(time + 900).duration(500)
+                    .attr("r", function (d) { return d.r * height })
+                ponto.select("text").transition().delay(time + 1250).duration(500).attr("font-size", font);
+                time += 2000;
+
+                g.select("#caption-0").select("text").transition().delay(time).duration(500).attr("font-size", espessura);
+
+                text_slides.carousel(2);
+                text_slides.carousel("pause");
+            },
+/*3*/       function () {
+                var time = 0;
+                slide_current = 2;
+                linhaEngenheiro.select("rect").transition().delay(time).duration(200).attr("width", .5 * width);
+                time += 200;
+
+                var ponto = g.select("#ponto-3");
+                ponto.selectAll("circle").data(configuracao_pontos)
+                    .transition().delay(time).duration(500)
+                    .attr("r", function (d) { return d.r * height })
+                ponto.select("text").transition().delay(time + 250).duration(500).attr("font-size", font);
+                time += 750;
+
+                time += 500;
+
+                var path = g.select("#caption-1").select("g").select("path").attr("transform", "rotate(180)");
+                path.data(pie)
+                    .transition()
+                    .duration(3000)
+                    .delay(time)
+                    .attrTween("d", function (d) {
+                        var interpolate = d3.interpolate(this._current, d);
+                        this._current = interpolate(0);
+                        return function (t) {
+                            return arc(interpolate(-t));
+                        };
+                    });
+                ponto = g.select("#ponto-4");
+                ponto.selectAll("circle").data(configuracao_pontos)
+                    .transition().delay(time + 900).duration(500)
+                    .attr("r", function (d) { return d.r * height })
+                ponto.select("text").transition().delay(time + 1250).duration(500).attr("font-size", font);
+
+                ponto = g.select("#ponto-5");
+                ponto.selectAll("circle").data(configuracao_pontos)
+                    .transition().delay(time + 1600).duration(500)
+                    .attr("r", function (d) { return d.r * height })
+                ponto.select("text").transition().delay(time + 2250).duration(500).attr("font-size", font);
+                time += 2000;
+
+                g.select("#caption-1").select("text").transition().delay(time).duration(500).attr("font-size", espessura);
+
+                text_slides.carousel(3);
+                text_slides.carousel("pause");
+
+            },
+/*4*/       function () {
+                var time = 0;
+                slide_current = 3;
+                linhaEngenheiro.select("rect").transition().delay(time).duration(200).attr("width", .75 * width);
+                time += 200;
+
+                var ponto = g.select("#ponto-6");
+                ponto.selectAll("circle").data(configuracao_pontos)
+                    .transition().delay(time).duration(500)
+                    .attr("r", function (d) { return d.r * height })
+                ponto.select("text").transition().delay(time + 250).duration(500).attr("font-size", font);
+                time += 750;
+
+                time += 500;
+
+                var path = g.select("#caption-2").select("g").select("path");
+                path.data(pie)
+                    .transition()
+                    .duration(2000)
+                    .delay(time)
+                    .attrTween("d", function (d) {
+                        var interpolate = d3.interpolate(this._current, d);
+                        this._current = interpolate(0);
+                        return function (t) {
+                            return arc(interpolate(t));
+                        };
+                    });
+                ponto = g.select("#ponto-7");
+                ponto.selectAll("circle").data(configuracao_pontos)
+                    .transition().delay(time + 900).duration(500)
+                    .attr("r", function (d) { return d.r * height })
+                ponto.select("text").transition().delay(time + 1250).duration(500).attr("font-size", font);
+                time += 2000;
+
+                g.select("#caption-2").select("text").transition().delay(time).duration(500).attr("font-size", espessura);
+
+                text_slides.carousel(4);
+                text_slides.carousel("pause");
+            },
+/*5*/       function () {
+                slide_current = 4;
+                text_slides.carousel(5);
+                text_slides.carousel("pause");
+            },
+/*6*/       function () {
+                var time = 0;
+                slide_current = 5;
+                linhaEngenheiro.select("rect").transition().delay(time).duration(200).attr("width", width);
+                time += 200;
+
+                var ponto = g.select("#ponto-8");
+                ponto.selectAll("circle").data(configuracao_pontos)
+                    .transition().delay(time).duration(500)
+                    .attr("r", function (d) { return d.r * height })
+                ponto.select("text").transition().delay(time + 250).duration(500).attr("font-size", font);
+                text_slides.carousel(6);
+                text_slides.carousel("pause");
+            },
+/*7*/       function () {
+                slide_current = 6;
+                g.selectAll(".tittle")
+                    .transition().delay(function(d,i){return i*1000}).duration(200)
+                    .attr("fill","#AAA")
+                text_slides.carousel(7);
+                text_slides.carousel("pause");
+            },
+        ]
+        var nextslide = function () {
+            slides[(slide_current + 1) % slides.length]();
+        }
+        var prevslide = function () {
+            slides[(slide_current - 1) < 0 ? slides.length - 1 : (slide_current - 1)]();
+        }
+    </script>
+</body>
+
+</html>
