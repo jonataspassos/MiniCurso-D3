@@ -16,12 +16,23 @@
             documentos (alterando, adicionando ou removendo elementos) de forma versátil e interativa.</p>
         <p>Este tutorial auxiliará na familiarização da ferramenta, e trará dicas de como seguir no desenvolvimento de
             gráficos e outras soluções utilizando o D3</p>
-        <h3>Exemplos de utilização</h3>
-        <p id="sample"></p>
-        <h3>Links sugeridos</h3>
-        <p id="link"></p>
-        <h3>Referências</h3>
-        <p id="ref"></p>
+        <div style="display: table-row">
+            <div style="width: 50%;display: table-cell;">
+                <h3>Exemplos de utilização</h3>
+                <div id="sample"></div>
+            </div>
+            <div style="display: table-cell;">
+                <h3>Links sugeridos</h3>
+                <div id="link"></div>
+                <h3>Referências</h3>
+                <div id="ref"></div>
+            </div>
+        </div>
+
+
+        <div style="width: 100%; display: table;">
+
+        </div>
     </div>
 
     <script>
@@ -37,14 +48,28 @@
             { label: "Word Cloudy", link: "./00_samples/WordCloudy/index.html" }
         ];
         var link = [
-            { label: "", link: "" }
+            { label: "Tutorial D3 : Sohaib Nehal (scrimba)", link: "https://scrimba.com/g/gd3js" },
+            { label: "Tutorial Bar Chart D3 : Harald Borgen (scrimba)", link: "https://scrimba.com/playlist/pEKMsN" },
+            { label: "Tutorial D3(outros)", link: "https://github.com/d3/d3/wiki/Tutorials" },
+            { label: "Paths SVG with D3", link: "https://www.dashingd3js.com/svg-paths-and-d3js" }
+            
+
+
         ];
         var ref = [
-            { label: "", link: "" }
+            { label: "D3 Site oficial", link: "d3js.org" },
+            { label: "D3 Documentação", link: "https://github.com/d3/d3/blob/master/API.md" }
         ];
 
-        d3.select("#sample").selectAll("p").data(sample).enter()
-            .append("a").attr("href", function (d) { return d.link })
-            .text(function (d) { return d.label+" , " });
+        function linkLabel(tag, data) {
+            d3.select(tag).selectAll("p").data(data).enter()
+                .append("p").append("a").attr("href", function (d) { return d.link })
+                .text(function (d) { return d.label + " , " });
+        }
+        linkLabel("#sample", sample);
+        linkLabel("#link", link);
+        linkLabel("#ref", ref);
+
+
     </script>
 </body>
