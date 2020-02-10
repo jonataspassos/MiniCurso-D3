@@ -10,7 +10,7 @@
         right: 10
     }
 
-    var graph = d3.select("body").append("svg")
+    var g = d3.select("body").append("svg")
         .attr("width", w).attr("height", h)
         .append("g").attr("transform", "translate(" + [margin.left, margin.top] + ")");
 
@@ -28,11 +28,25 @@
     var x_axis = d3.axisBottom(x);
     var y_axis = d3.axisLeft(y);
 
-    var x_axis_group = graph.append("g").attr("class", "x-axis")
+    var x_axis_group = g.append("g").attr("class", "x-axis")
         .attr("transform", "translate(" + [0, y(0) + 10] + ")")
 
-    var y_axis_group = graph.append("g").attr("class", "y-axis")
+    var y_axis_group = g.append("g").attr("class", "y-axis")
         .attr("transform", "translate(" + [-10, 0] + ")")
+
+    var graph = g.append("g").attr("class", "data-points");
+
+    function zoomed() {
+        graph.attr("transform", d3.event.transform);
+        d3.event.transform.rescaleX(x);
+        d3.event.transform.rescaleY(y);
+    }
+
+    var zoom = d3.zoom().on("zoom", zoomed);
+
+    var zoom_rect = graph.append("rect").attr("width", w + 10)
+        .attr("height", h + 10).attr("x", -10).attr("fill", "none")
+        .style("pointer-events", "all").call(zoom);
 
     var legend_table = d3.select("body").append("div")
         .attr("class", "legend-table")
@@ -113,7 +127,8 @@
         legend = legend_table
             .selectAll(".legend");
 
-        legend.select("div").style("background-color", (d) => z(d)).style("width", "18").style("height", "18");
+        legend.select("div").style("background-color", (d) => z(d)).style("width", "18")
+            .style("height", "18");
         legend.select("a").text((d) => { return d })
     }
 
