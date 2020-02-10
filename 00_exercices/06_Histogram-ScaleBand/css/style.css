@@ -1,0 +1,12 @@
+.node>rect {
+    fill: blue;
+}
+
+.mouse-over>rect {
+    fill: brown;
+}
+
+.node>text {
+    text-anchor: middle;
+    fill: white;
+}

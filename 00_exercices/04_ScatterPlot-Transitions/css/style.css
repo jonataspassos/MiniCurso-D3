@@ -1,0 +1,7 @@
+.point>circle{
+    fill: black;
+}
+.point>text{
+    font-size: 12px;
+    fill:red;
+}
