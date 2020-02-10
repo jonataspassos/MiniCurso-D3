@@ -1,3 +1,4 @@
+/* Este arquivo foi alterado para mostrar a utilização das transicoes */
 (() => {
 
     function getRandom(min, max) {
@@ -38,6 +39,8 @@
     function updateGraph() {
         var dataset = dataSetGenerator(getRandom(10, 30));
 
+        //Ao criar o elemento no ponto que ele devera iniciar, evita-se 
+        //uma transicao com o ponto partindo da origem do grafico
         var points = graph.selectAll(".point").data(dataset).enter()
             .append("g").attr("class", "point").attr("transform", (d, i) => {
                 return "translate(" + [d[0], d[1]] + ")"
@@ -47,18 +50,25 @@
 
         graph.selectAll(".point").data(dataset).exit().remove();
 
+        //A transicao dos grupos na atualizacao é para tornar 
+        //suave a movimentacao dos pontos antigos na tela
         points = graph.selectAll(".point")
-            .transition()
-            .duration(500)
+            .transition() //Ativa a transicao
+            .duration(500) //Transicao dura 500ms
             .attr("transform", (d, i) => {
                 return "translate(" + [d[0], d[1]] + ")"
             });
 
+        //A transicao no circulo torna suave o 
+        //redimensionamento do raio
         points.select("circle")
             .transition()
             .delay(0)
             .duration(500)
-            .attr("r", (d) => { return d[2] })
+            .attr("r", (d) => { return d[2] });
+
+        //Textos não possuem transicao na mudanca de conteudo
+        //Transicoes sao validas em atributos numericos(tamanhos, poricoes, cores, ...)
         points.select("text").text((d) => { return "" + d[0] + "," + d[1] });
 
     }

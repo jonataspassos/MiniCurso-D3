@@ -1,3 +1,7 @@
+/** Para este exemplo, eh necessario que o arquivo esteja 
+ * sendo referenciado a partir de um servidor http, para
+ * solucionar o problema de cors
+ */
 (() => {
 
     var w = 600,
@@ -21,8 +25,10 @@
         y_range = [h, 0],
         z_range = ["black", "blue"];
 
+    //Foi alterado para receber os estados
     var x = d3.scaleBand().range(x_range);
     var y = d3.scaleLinear().range(y_range);
+    //Foi alterado para receber os anos
     var z = d3.scaleOrdinal().range((d3.schemeCategory10 + d3.schemeTableau10).split(','));
 
     var x_axis = d3.axisBottom(x);
@@ -37,6 +43,10 @@
     var legend_table = d3.select("body").append("div")
         .attr("class", "legend-table")
 
+    //Nem sempre os dados que voce desejar representar em um grafico 
+    //virao da forma como o grafico recebe. As vezes a solucao eh 
+    //mais simples, mas isso tambem pode nao acontecer
+    //Esta funcao reorganiza os dados importados para o desenho do grafico
     function dataConfig(data, years) {
         ret = [];
         data.forEach(d => {
@@ -49,23 +59,28 @@
         return ret;
     }
 
+    //Comparador de array para filtrar os iguais
     function distinct(value, index, self) {
         return self.indexOf(value) === index;
     }
 
-    function updateGraph(years) {
+    updateGraph = function(years) {
+        //Por default, selecionara apenas os dados de 98 e 99
         years = years || [1998, 1999]
-        Promise.all([
-            d3.csv("http://localhost/data/aids.csv")
-        ]).then(function(data) {
-            dataset = dataConfig(data[0], years);
+            //Realiza a requisicao do arquivo e executa a funcao apenas quando o arquivo for totalmente carregado
+        d3.csv("http://localhost/data/aids.csv").then(function(data) {
+            //reconfigura os dados
+            dataset = dataConfig(data, years);
 
             var x_domain = [],
+                //obtem o maior e o menor valor
                 y_domain = d3.extent(dataset, (d) => { return d.value }),
                 z_domain = years;
 
+            //Seleciona os estados e ordena
             dataset.forEach((d) => { x_domain.push(d.UF) });
             x_domain = x_domain.filter(distinct).sort();
+            //zera o valor inicial
             y_domain[0] = 0;
 
             x.domain(x_domain);
@@ -74,7 +89,7 @@
 
             x_axis_group.transition().duration(500).call(x_axis)
                 .selectAll(".tick").attr("transform",
-                    (d) => {
+                    (d) => { //Esta configuracao ajuda a ler os labels no eixo horizontal
                         return "translate(" + [x(d) + x.bandwidth() / 2, 0] +
                             ")rotate(-25)"
                     })

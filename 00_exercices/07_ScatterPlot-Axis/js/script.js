@@ -1,3 +1,6 @@
+/* Este arquivo demonstra a utilizacao de eixos para a leitura do grafico
+  Ele toma como base uma escala, e de acordo com o tipo dela, e o tamanho
+  cria o eixo com a orientacao solicitada */
 (() => {
 
     function getRandom(min, max) {
@@ -53,12 +56,14 @@
     var y = d3.scaleLinear().range(y_range);
     var z = d3.scaleLinear().range(z_range);
 
-    var x_axis = d3.axisBottom(x);
-    var y_axis = d3.axisLeft(y);
+    var x_axis = d3.axisBottom(x); //Eixo horizontal com labels para baixo
+    var y_axis = d3.axisLeft(y); //Eixo vertical com labels para a esquerda
 
+    //Local onde sera adicionado o eixo horizontal
     var x_axis_group = graph.append("g").attr("class", "x-axis")
-        .attr("transform", "translate(" + [0, y(0) + 10] + ")")
+        .attr("transform", "translate(" + [0, y(0) + 10] + ")");
 
+    //local onde sera adicionado o eixo vertical
     var y_axis_group = graph.append("g").attr("class", "y-axis")
         .attr("transform", "translate(" + [-10, 0] + ")")
 
@@ -73,8 +78,11 @@
         y.domain(y_domain);
         z.domain(z_domain);
 
+        //Desenha os eixos
         x_axis_group.transition().duration(500).call(x_axis);
         y_axis_group.transition().duration(500).call(y_axis);
+        //Observe que, com a transicao, o eixo sera editado 
+        //suavemente a cada atualizacao
 
         var points = graph.selectAll(".point").data(dataset).enter()
             .append("g").attr("class", "point").attr("transform", (d, i) => {
