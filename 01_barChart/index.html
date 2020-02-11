@@ -1,13 +1,31 @@
 <html>
-    <head>
-        <script src="https://d3js.org/d3.v5.min.js"></script>
-    </head>
-    <body>
-        <script>
-                var dataset = [5, 10, 13, 19, 21, 25, 22, 18, 15,
-                    13, 11, 12, 15, 20, 18, 17, 16, 18, 23, 25];
 
-                //Create your BarChart Here
-        </script>
-    </body>
+<head>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+</head>
+
+<body>
+    <script>
+        var disciplinas = [
+            { key: "Lógica", value: 78, obs: "fui bem" },
+            { key: "Álgebra I", value: 71, obs: "fui bem" },
+            { key: "Orientação a Objetos", value: 67, obs: "fui mal" },
+            { key: "Estatística I", value: 93, obs: "fui muito bem" },
+            { key: "Sistemas Operacionais I", value: 59, obs: "fui mal" },
+            { key: "Física Experimental", value: 43, obs: "fui muito mal" },
+            { key: "Engenharia de Software", value: 88, obs: "fui bem" },
+            { key: "Estrutura de Dados", value: 36, obs: "fui muito mal" },
+            { key: "Algoritmos I", value: 91, obs: "fui muito bem" },
+            { key: "Algoritmos II", value: 74, obs: "fui bem" },
+            { key: "Programação Java", value: 67, obs: "fui mal" },
+            { key: "Programação Python", value: 75, obs: "fui bem" }
+        ];
+
+        //Create your BarChart Here
+        var w = 800, h = 500;
+
+        d3.select("body").append("svg").attr("width", w).attr("height", h);
+    </script>
+</body>
+
 </html>
