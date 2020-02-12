@@ -162,8 +162,10 @@
     };
 
     getSize = function (seletor) {
-        var temp = document.querySelector("#pie-chart").getBoundingClientRect();
-        return { w: temp.width, h: temp.height };
+        var temp = document.querySelector(seletor).getBoundingClientRect();
+        temp.w = temp.width;
+        temp.h = temp.height;
+        return temp;
     }
 
 })()
