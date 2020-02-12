@@ -1,9 +1,19 @@
+#bar-chart>text {
+    fill: #1c1c1c;
+}
+
+#bar-chart {
+    color: #1c1c1c;
+}
+
 #bar-chart {
     width: 80%;
     height: 100%;
+    background-color: #FDFFFC;
 }
 
 /*ToolTip: https://bl.ocks.org/d3noob/a22c42db65eb00d4e369*/
+
 div.tooltip {
     position: absolute;
     text-align: center;
