@@ -98,9 +98,8 @@ function draw() {
 
     bars.select("rect")
         .transition().duration(500)
-        .attr("fill", (d) => {
-            return d.value >= 70 ? "#2355CD" : d.value >= 40 ? "#B7AD99" : "#F03A47";
-        })
+        .attr("fill", (d) => {return d.value >= 70 ? "#2355CD" : d.value >= 40 ? "#B7AD99" : "#C5303B";})
+        //.attr("fill", (d) => {return d.value >= 70 ? "blue" : d.value >= 40 ? "grey" : "red";})
         .attr("width", x.bandwidth()).attr("height", d => { return h - y(d.value) })
         .attr("x", (d) => x(d.key)).attr("y", (d) => y(d.value));
 }

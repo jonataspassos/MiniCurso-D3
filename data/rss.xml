@@ -9,38 +9,66 @@
             <link>http://www.bbcbrasil.com</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Tue, 11 Feb 2020 12:12:49 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 12 Feb 2020 11:32:28 GMT</lastBuildDate>
         <copyright><![CDATA[Copyright British Broadcasting Corporation ]]></copyright>
         <language><![CDATA[pt-BR]]></language>
         <managingEditor><![CDATA[portuguese@bbc.co.uk]]></managingEditor>
         <ttl>15</ttl>
         <item>
-            <title><![CDATA[Criticado por alcance tímido, projeto de Moro contra homicídios irá a apenas 10 cidades em 2020]]></title>
-            <description><![CDATA[Primeiros 5 municípios escolhidos para o 'Em Frente, Brasil' tiveram redução de homicídios e roubos de agosto e janeiro, mas crime já vinha caindo nessas cidades; especialistas em segurança pública veem obstáculos para ampliação e questionam programa.]]></description>
-            <link>http://www.bbc.com/portuguese/brasil-51409155</link>
-            <guid isPermaLink="true">http://www.bbc.com/portuguese/brasil-51409155</guid>
-            <pubDate>Tue, 11 Feb 2020 09:00:13 GMT</pubDate>
+            <title><![CDATA[Da indústria de celulares à soja, os impactos do coronavírus na economia brasileira]]></title>
+            <description><![CDATA[Situação sem precedentes dificulta mensuração dos efeitos da desaceleração da China sobre outros países - desde a última grande epidemia que atingiu o país, em 2003, participação chinesa no PIB global aumentou quatro vezes.]]></description>
+            <link>http://www.bbc.com/portuguese/brasil-51452527</link>
+            <guid isPermaLink="true">http://www.bbc.com/portuguese/brasil-51452527</guid>
+            <pubDate>Wed, 12 Feb 2020 08:49:33 GMT</pubDate>
         </item>
         <item>
-            <title><![CDATA[Eleição nos EUA: após'fiasco' de Iowa, disputa democrata começa a ganhar corpo em New Hampshire]]></title>
-            <description><![CDATA[Segundo Estado a realizar prévias eleitorais — nesta terça-feira — pode começar a 'moldar narrativas' das campanhas que disputam definição de quem enfrentará Donald Trump em novembro.]]></description>
-            <link>http://www.bbc.com/portuguese/internacional-51394534</link>
-            <guid isPermaLink="true">http://www.bbc.com/portuguese/internacional-51394534</guid>
-            <pubDate>Tue, 11 Feb 2020 11:20:52 GMT</pubDate>
+            <title><![CDATA['Pesadelo' ou única chance de vencer Trump? O avanço de Bernie Sanders nas primárias]]></title>
+            <description><![CDATA[Críticos temem que Sanders afaste moderados insatisfeitos com Trump, mas apoiadores veem suas propostas antissistema como trunfo contra presidente republicano.]]></description>
+            <link>http://www.bbc.com/portuguese/internacional-51472409</link>
+            <guid isPermaLink="true">http://www.bbc.com/portuguese/internacional-51472409</guid>
+            <pubDate>Wed, 12 Feb 2020 09:27:43 GMT</pubDate>
         </item>
         <item>
-            <title><![CDATA[Coronavírus: China troca autoridades no epicentro do surto em meio a crescente indignação popular]]></title>
-            <description><![CDATA[Avanço da doença tem sido uma prova de fogo para Partido Comunista Chinês e seu sistema político; autoridades locais costumam ter medo de expor problemas por causa da eventual reação de seus superiores.]]></description>
-            <link>http://www.bbc.com/portuguese/internacional-51457356</link>
-            <guid isPermaLink="true">http://www.bbc.com/portuguese/internacional-51457356</guid>
-            <pubDate>Tue, 11 Feb 2020 10:34:28 GMT</pubDate>
+            <title><![CDATA[O que é o ‘cisne verde', que pode causar a próxima crise financeira mundial]]></title>
+            <description><![CDATA[Com a crise de 2008, veio a expressão 'cisne negro'; agora, economistas alertam para um outro tipo de sério risco que veio para ficar.]]></description>
+            <link>http://www.bbc.com/portuguese/geral-51452947</link>
+            <guid isPermaLink="true">http://www.bbc.com/portuguese/geral-51452947</guid>
+            <pubDate>Wed, 12 Feb 2020 11:11:29 GMT</pubDate>
         </item>
         <item>
-            <title><![CDATA[Por que a cidade de São Paulo não consegue evitar as enchentes frequentes?]]></title>
-            <description><![CDATA[Especialistas ouvidos pela BBC News Brasil apontam problemas de drenagem, ocupação do solo e prevenção.]]></description>
-            <link>http://www.bbc.com/portuguese/brasil-51422824</link>
-            <guid isPermaLink="true">http://www.bbc.com/portuguese/brasil-51422824</guid>
-            <pubDate>Mon, 10 Feb 2020 22:08:05 GMT</pubDate>
+            <title><![CDATA[Apoio do governo, cotas e festivais: como a Coreia do Sul reinventou seu cinema e fez história no Oscar com 'Parasita']]></title>
+            <description><![CDATA[Uma 'era de ouro' da indústria no país foi prejudicada por uma ditadura que durou 26 anos. Mas, desde a redemocratização, políticas públicas e capital privado transformaram a indústria cinematográfica do país, abrindo caminho para produções que são um sucesso de bilheteria e de crítica.]]></description>
+            <link>http://www.bbc.com/portuguese/internacional-51420743</link>
+            <guid isPermaLink="true">http://www.bbc.com/portuguese/internacional-51420743</guid>
+            <pubDate>Tue, 11 Feb 2020 21:03:20 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Governo inclui ONG missionária próxima a Damares em viagem até indígenas recém-contatados na Amazônia]]></title>
+            <description><![CDATA[Missionárias da ONG Jocum (Jovens com uma Missão) integrarão uma expedição organizada pelos ministérios da Saúde e da Mulher, Família e Direitos Humanos para sanar uma 'crise de saúde mental' que estaria por trás de suicídios recentes entre indígenas do povo suruwahá.]]></description>
+            <link>http://www.bbc.com/portuguese/brasil-51422570</link>
+            <guid isPermaLink="true">http://www.bbc.com/portuguese/brasil-51422570</guid>
+            <pubDate>Tue, 11 Feb 2020 15:49:05 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Coronavírus: 'É muito triste e desolador', relata enfermeira no epicentro do surto de coronavírus]]></title>
+            <description><![CDATA[Yao conta à BBC como é trabalhar como voluntária em hospital que atende pacientes com a doença.]]></description>
+            <link>http://www.bbc.com/portuguese/internacional-51457657</link>
+            <guid isPermaLink="true">http://www.bbc.com/portuguese/internacional-51457657</guid>
+            <pubDate>Tue, 11 Feb 2020 17:16:39 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Milhares de refugiados vivem há 30 anos em ruínas do balneário favorito de Stálin]]></title>
+            <description><![CDATA[O governo da Geórgia quer transformar a cidade de Tskaltubo em atração turística.]]></description>
+            <link>http://www.bbc.com/portuguese/media-51475189</link>
+            <guid isPermaLink="true">http://www.bbc.com/portuguese/media-51475189</guid>
+            <pubDate>Wed, 12 Feb 2020 10:44:05 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Mergulhador filma focas 'batendo palmas' debaixo d'água; entenda por que elas fazem isso]]></title>
+            <description><![CDATA[Pesquisador levou 17 anos para conseguir registrar gesto em vídeo.]]></description>
+            <link>http://www.bbc.com/portuguese/curiosidades-51469288</link>
+            <guid isPermaLink="true">http://www.bbc.com/portuguese/curiosidades-51469288</guid>
+            <pubDate>Tue, 11 Feb 2020 19:54:22 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Por que privatização dos Correios promete ser a mais difícil do governo Bolsonaro]]></title>
@@ -50,46 +78,18 @@
             <pubDate>Mon, 10 Feb 2020 09:42:48 GMT</pubDate>
         </item>
         <item>
+            <title><![CDATA[Criticado por alcance tímido, projeto de Moro contra homicídios irá a apenas 10 cidades em 2020]]></title>
+            <description><![CDATA[Primeiros 5 municípios escolhidos para o 'Em Frente, Brasil' tiveram redução de homicídios e roubos de agosto e janeiro, mas crime já vinha caindo nessas cidades; especialistas em segurança pública veem obstáculos para ampliação e questionam programa.]]></description>
+            <link>http://www.bbc.com/portuguese/brasil-51409155</link>
+            <guid isPermaLink="true">http://www.bbc.com/portuguese/brasil-51409155</guid>
+            <pubDate>Tue, 11 Feb 2020 09:00:13 GMT</pubDate>
+        </item>
+        <item>
             <title><![CDATA[Adriano da Nóbrega: Qual é a relação entre acusado de chefiar milícia morto e Flávio Bolsonaro?]]></title>
             <description><![CDATA[Adriano da Nóbrega era acusado de chefiar a milícia e o grupo de assassinos profissionais aos quais, segundo investigadores, estão ligados acusados de morte da vereadora Marielle Franco, em 2018. Ele também era suspeito de se beneficiar financeiramente do esquema de repasses ilegais no gabinete de Flávio Bolsonaro.]]></description>
             <link>http://www.bbc.com/portuguese/brasil-51447905</link>
             <guid isPermaLink="true">http://www.bbc.com/portuguese/brasil-51447905</guid>
             <pubDate>Mon, 10 Feb 2020 14:16:18 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[Exército invade Congresso de El Salvador: os motivos da tensão entre o presidente e o Parlamento]]></title>
-            <description><![CDATA[Presidente pressiona os parlamentares a aprovar negociação de empréstimo de US$ 109 milhões para implementar plano de segurança pública.]]></description>
-            <link>http://www.bbc.com/portuguese/internacional-51442409</link>
-            <guid isPermaLink="true">http://www.bbc.com/portuguese/internacional-51442409</guid>
-            <pubDate>Mon, 10 Feb 2020 18:53:15 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA['Aqui não é sua casa': os relatos dos brasileiros detidos e deportados dos Estados Unidos]]></title>
-            <description><![CDATA[Na noite de sexta, um avião trouxe brasileiros deportados dos EUA de volta ao país; muitos estavam detidos há quase 20 dias, há mais de dez sem tomar banho, todos bem mais magros do que quando partiram.]]></description>
-            <link>http://www.bbc.com/portuguese/brasil-51431135</link>
-            <guid isPermaLink="true">http://www.bbc.com/portuguese/brasil-51431135</guid>
-            <pubDate>Sun, 09 Feb 2020 10:12:05 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[Aracnofobia: a mulher que tinha medo de aranhas e hoje dorme com 32 tarântulas]]></title>
-            <description><![CDATA[Para superar aracnofobia, Vanessa fez 'terapia de exposição']]></description>
-            <link>http://www.bbc.com/portuguese/curiosidades-51449897</link>
-            <guid isPermaLink="true">http://www.bbc.com/portuguese/curiosidades-51449897</guid>
-            <pubDate>Mon, 10 Feb 2020 19:34:05 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[Como as especiarias mudaram o mundo]]></title>
-            <description><![CDATA[O apetite insaciável por temperos de outras partes do mundo foi o pontapé inicial da globalização.]]></description>
-            <link>http://www.bbc.com/portuguese/media-49794317</link>
-            <guid isPermaLink="true">http://www.bbc.com/portuguese/media-49794317</guid>
-            <pubDate>Fri, 07 Feb 2020 19:04:48 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[Os comissários da Varig que 'contrabandeavam' remédios para ajudar pacientes com Aids]]></title>
-            <description><![CDATA[No final dos anos 1980, os funcionários da companhia aérea, que faliu em 2006, criaram uma 'rede de solidariedade' para importar medicamentos que não existiam no Brasil e ajudar pacientes com a doença.]]></description>
-            <link>http://www.bbc.com/portuguese/brasil-51199929</link>
-            <guid isPermaLink="true">http://www.bbc.com/portuguese/brasil-51199929</guid>
-            <pubDate>Sat, 08 Feb 2020 17:34:46 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA['Que História': os brasileiros que viveram a 2ª Guerra em Londres]]></title>
@@ -99,11 +99,11 @@
             <pubDate>Fri, 07 Feb 2020 09:33:23 GMT</pubDate>
         </item>
         <item>
-            <title><![CDATA[México: em rifa inusitada, governo sorteia avião presidencial (mas o ganhador não leva o prêmio para casa)]]></title>
-            <description><![CDATA[Depois de um ano tentando, sem sucesso, vender a aeronave, o presidente Andrés Manuel López Obrador anunciou uma nova maneira de se livrar da herança de seu antecessor.]]></description>
-            <link>http://www.bbc.com/portuguese/internacional-51427313</link>
-            <guid isPermaLink="true">http://www.bbc.com/portuguese/internacional-51427313</guid>
-            <pubDate>Sat, 08 Feb 2020 16:24:54 GMT</pubDate>
+            <title><![CDATA[Aracnofobia: a mulher que tinha medo de aranhas e hoje dorme com 32 tarântulas]]></title>
+            <description><![CDATA[Para superar aracnofobia, Vanessa fez 'terapia de exposição']]></description>
+            <link>http://www.bbc.com/portuguese/curiosidades-51449897</link>
+            <guid isPermaLink="true">http://www.bbc.com/portuguese/curiosidades-51449897</guid>
+            <pubDate>Mon, 10 Feb 2020 19:34:05 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[O que o dia dos namorados japonês diz sobre os valores do país]]></title>
@@ -141,18 +141,18 @@
             <pubDate>Sun, 09 Feb 2020 20:37:43 GMT</pubDate>
         </item>
         <item>
-            <title><![CDATA[Margaret Atwood, autora de ‘O Conto da Aia’: ‘Se os EUA tivessem uma ditadura, seria religiosa’]]></title>
-            <description><![CDATA[A escritora canadense Margaret Atwood está no Hay Festival em Cartagena, Colômbia, onde a BBC Mundo conversou com ela sobre 'O Conto da Aia' e sua sequência, 'Os Testamentos', publicada 34 anos depois.]]></description>
-            <link>http://www.bbc.com/portuguese/internacional-51365712</link>
-            <guid isPermaLink="true">http://www.bbc.com/portuguese/internacional-51365712</guid>
-            <pubDate>Sun, 09 Feb 2020 19:52:27 GMT</pubDate>
+            <title><![CDATA[Oscar 2020: saiba todos os vencedores e onde assisti-los]]></title>
+            <description><![CDATA['Parasita' fez história ao se tornar o primeiro longa não falado em inglês a vencer categoria de melhor filme. Academia de Artes e Ciências Cinematográficas anunciou neste domingo (9) os vencedores da 92ª edição do prêmio em 24 categorias.]]></description>
+            <link>http://www.bbc.com/portuguese/geral-51442119</link>
+            <guid isPermaLink="true">http://www.bbc.com/portuguese/geral-51442119</guid>
+            <pubDate>Mon, 10 Feb 2020 07:49:01 GMT</pubDate>
         </item>
         <item>
-            <title><![CDATA[Como apps de entrega estão levando pequenos restaurantes à falência]]></title>
-            <description><![CDATA[Após levantar US$ 500 milhões, maior aplicativo de entrega de comida do país investe em promoções agressivas, impede acesso a clientes e monopoliza dados estratégicos.]]></description>
-            <link>http://www.bbc.com/portuguese/geral-51272233</link>
-            <guid isPermaLink="true">http://www.bbc.com/portuguese/geral-51272233</guid>
-            <pubDate>Sat, 08 Feb 2020 10:31:30 GMT</pubDate>
+            <title><![CDATA['Eles me estupraram e postaram o vídeo do crime em um site pornô']]></title>
+            <description><![CDATA[Em um post no ano passado, Rose Kalemba contou da dificuldade de remover, de um site popular de compartilhamento de pornografia, um vídeo do estupro que sofreu aos 14 anos; dezenas de pessoas entraram em contato com ela para dizer que enfrentavam o mesmo problema.]]></description>
+            <link>http://www.bbc.com/portuguese/geral-51409142</link>
+            <guid isPermaLink="true">http://www.bbc.com/portuguese/geral-51409142</guid>
+            <pubDate>Mon, 10 Feb 2020 12:10:23 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[A arte de fabricar balões de ar quente — em formato de bicho]]></title>
@@ -160,6 +160,13 @@
             <link>http://www.bbc.com/portuguese/aprenda-ingles-51358484</link>
             <guid isPermaLink="true">http://www.bbc.com/portuguese/aprenda-ingles-51358484</guid>
             <pubDate>Mon, 03 Feb 2020 13:58:32 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[As imagens fantásticas vencedoras do prêmio Landscape Photographer of the Year]]></title>
+            <description><![CDATA[Fotos que participaram do concurso foram feitas por 840 fotógrafos ao redor do mundo.]]></description>
+            <link>http://www.bbc.com/portuguese/geral-51445351</link>
+            <guid isPermaLink="true">http://www.bbc.com/portuguese/geral-51445351</guid>
+            <pubDate>Mon, 10 Feb 2020 15:52:09 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA['Parasita': as pessoas reais que vivem nos porões de Seul retratados pelo filme]]></title>
@@ -190,27 +197,6 @@
             <pubDate>Mon, 27 Jan 2020 08:52:52 GMT</pubDate>
         </item>
         <item>
-            <title><![CDATA[Vulcão Taal: Erupção de vulcão se transforma em fundo impressionante para fotos de casamento nas Filipinas]]></title>
-            <description><![CDATA[Erupção do vulcão Taal não impediu casal de seguir adiante com casamento e com festa.]]></description>
-            <link>http://www.bbc.com/portuguese/internacional-51092064</link>
-            <guid isPermaLink="true">http://www.bbc.com/portuguese/internacional-51092064</guid>
-            <pubDate>Mon, 13 Jan 2020 11:40:56 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[Como transportar um foguete? As fotos que mostram megaoperação na Nasa]]></title>
-            <description><![CDATA[A principal parte do mega-foguete SLS, que vai possibilitar a próxima missão à Lua e possivelmente a ida à Marte, deixou a fábrica em Nova Orleans e já está sendo testado.]]></description>
-            <link>http://www.bbc.com/portuguese/geral-51054821</link>
-            <guid isPermaLink="true">http://www.bbc.com/portuguese/geral-51054821</guid>
-            <pubDate>Thu, 09 Jan 2020 20:13:54 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[As impactantes imagens dos incêndios que estão destruindo parte da Austrália]]></title>
-            <description><![CDATA[A Austrália está passando por uma onda de calor extremo que causou milhares de incêndios. Ao menos 23 pessoas morreram e cerca de 1.500 casas foram destruídas. A cidade costeira de Mallacoota foi uma das mais afetadas.]]></description>
-            <link>http://www.bbc.com/portuguese/internacional-50996103</link>
-            <guid isPermaLink="true">http://www.bbc.com/portuguese/internacional-50996103</guid>
-            <pubDate>Sat, 04 Jan 2020 23:01:21 GMT</pubDate>
-        </item>
-        <item>
             <title><![CDATA[As imagens mais impressionantes do espaço em 2019]]></title>
             <description><![CDATA[Com algumas grandes missões, 2019 trouxe para a Terra imagens impressionantes do sistema solar e do Universo afora.]]></description>
             <link>http://www.bbc.com/portuguese/geral-50950906</link>
@@ -225,11 +211,25 @@
             <pubDate>Tue, 31 Dec 2019 15:44:53 GMT</pubDate>
         </item>
         <item>
-            <title><![CDATA['Fomos denunciados por deixar que nosso filho de cinco anos use roupas femininas']]></title>
-            <description><![CDATA[Pais de Luiz, de cinco anos, contam que demoraram para entender que filho era transgênero, mas que decidiram respeitar vontade de criança — e agora enfrentam preconceito em cidade em que vivem.]]></description>
-            <link>http://www.bbc.com/portuguese/brasil-51335581</link>
-            <guid isPermaLink="true">http://www.bbc.com/portuguese/brasil-51335581</guid>
-            <pubDate>Tue, 11 Feb 2020 12:09:30 GMT</pubDate>
+            <title><![CDATA[Google Maps: 5 novas funções lançadas pelo aplicativo para comemorar seu 15º aniversário]]></title>
+            <description><![CDATA[Entre as novidades, estão recursos para otimizar a rota do usuário para o trabalho e a recomendação de atrações locais, como museus e restaurantes.]]></description>
+            <link>http://www.bbc.com/portuguese/geral-51472535</link>
+            <guid isPermaLink="true">http://www.bbc.com/portuguese/geral-51472535</guid>
+            <pubDate>Wed, 12 Feb 2020 11:25:28 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Imagem impressionante de camundongos 'brigando' ganha prêmio de fotografia]]></title>
+            <description><![CDATA[Sam Rowley ficou tão fascinado por esses roedores subterrâneos que passou uma semana em uma estação de metrô de Londres tentando fotografá-los]]></description>
+            <link>http://www.bbc.com/portuguese/geral-51472529</link>
+            <guid isPermaLink="true">http://www.bbc.com/portuguese/geral-51472529</guid>
+            <pubDate>Wed, 12 Feb 2020 09:58:42 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Coronavírus: quem são os superdisseminadores da doença e por que eles são tão importantes?]]></title>
+            <description><![CDATA[Surto do novo coronavírus (rebatizado de covid-19) começou em dezembro na cidade chinesa de Wuhan e matou até agora mais de mil pessoas e infectou outras 40 mil.]]></description>
+            <link>http://www.bbc.com/portuguese/internacional-51472729</link>
+            <guid isPermaLink="true">http://www.bbc.com/portuguese/internacional-51472729</guid>
+            <pubDate>Wed, 12 Feb 2020 10:25:15 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA['Sair da China seria desistir de sonho': o brasileiro que decidiu ficar em Wuhan apesar de surto]]></title>
@@ -239,6 +239,13 @@
             <pubDate>Tue, 11 Feb 2020 09:47:22 GMT</pubDate>
         </item>
         <item>
+            <title><![CDATA['Fomos denunciados por deixar que nosso filho de cinco anos use roupas femininas']]></title>
+            <description><![CDATA[Pais de Luiz, de cinco anos, contam que demoraram para entender que filho era transgênero, mas que decidiram respeitar vontade de criança — e agora enfrentam preconceito em cidade em que vivem.]]></description>
+            <link>http://www.bbc.com/portuguese/brasil-51335581</link>
+            <guid isPermaLink="true">http://www.bbc.com/portuguese/brasil-51335581</guid>
+            <pubDate>Tue, 11 Feb 2020 12:09:30 GMT</pubDate>
+        </item>
+        <item>
             <title><![CDATA['Meu pai, o genocida': as filhas de torturadores na Argentina que romperam silêncio sobre 'segredo familiar']]></title>
             <description><![CDATA[Um grupo de mulheres decidiu confrontar os pais e questionar o papel que desempenharam como membros das forças de segurança após o golpe de 1976.]]></description>
             <link>http://www.bbc.com/portuguese/geral-51398365</link>
@@ -246,39 +253,39 @@
             <pubDate>Tue, 11 Feb 2020 09:55:12 GMT</pubDate>
         </item>
         <item>
-            <title><![CDATA[As imagens fantásticas vencedoras do prêmio Landscape Photographer of the Year]]></title>
-            <description><![CDATA[Fotos que participaram do concurso foram feitas por 840 fotógrafos ao redor do mundo.]]></description>
-            <link>http://www.bbc.com/portuguese/geral-51445351</link>
-            <guid isPermaLink="true">http://www.bbc.com/portuguese/geral-51445351</guid>
-            <pubDate>Mon, 10 Feb 2020 15:52:09 GMT</pubDate>
+            <title><![CDATA['Ceifador da Morte': a nova espécie de tiranossauro descoberta no Canadá]]></title>
+            <description><![CDATA[Os fósseis do predador, que tinha 2,4 metros de altura, foram encontrados em uma fazenda no interior do país.]]></description>
+            <link>http://www.bbc.com/portuguese/geral-51466609</link>
+            <guid isPermaLink="true">http://www.bbc.com/portuguese/geral-51466609</guid>
+            <pubDate>Tue, 11 Feb 2020 18:53:06 GMT</pubDate>
         </item>
         <item>
-            <title><![CDATA['Eles me estupraram e postaram o vídeo do crime em um site pornô']]></title>
-            <description><![CDATA[Em um post no ano passado, Rose Kalemba contou da dificuldade de remover, de um site popular de compartilhamento de pornografia, um vídeo do estupro que sofreu aos 14 anos; dezenas de pessoas entraram em contato com ela para dizer que enfrentavam o mesmo problema.]]></description>
-            <link>http://www.bbc.com/portuguese/geral-51409142</link>
-            <guid isPermaLink="true">http://www.bbc.com/portuguese/geral-51409142</guid>
-            <pubDate>Mon, 10 Feb 2020 12:10:23 GMT</pubDate>
+            <title><![CDATA[Por que a cidade de São Paulo não consegue evitar as enchentes frequentes?]]></title>
+            <description><![CDATA[Especialistas ouvidos pela BBC News Brasil apontam problemas de drenagem, ocupação do solo e prevenção.]]></description>
+            <link>http://www.bbc.com/portuguese/brasil-51422824</link>
+            <guid isPermaLink="true">http://www.bbc.com/portuguese/brasil-51422824</guid>
+            <pubDate>Mon, 10 Feb 2020 22:08:05 GMT</pubDate>
         </item>
         <item>
-            <title><![CDATA[Oscar: 'Parasita' e outras surpresas históricas da premiação]]></title>
-            <description><![CDATA[A BBC News selecionou 10 ganhadores que deixaram o mundo boquiaberto.]]></description>
-            <link>http://www.bbc.com/portuguese/geral-51447195</link>
-            <guid isPermaLink="true">http://www.bbc.com/portuguese/geral-51447195</guid>
-            <pubDate>Mon, 10 Feb 2020 14:40:11 GMT</pubDate>
+            <title><![CDATA[Coronavírus: o que pode estar por trás da baixa incidência em crianças?]]></title>
+            <description><![CDATA[Notícia da infecção de um recém-nascido na China correu o mundo; mas estudo conduzido em hospital em Wuhan notou que 'casos entre crianças têm sido raros'.]]></description>
+            <link>http://www.bbc.com/portuguese/internacional-51460607</link>
+            <guid isPermaLink="true">http://www.bbc.com/portuguese/internacional-51460607</guid>
+            <pubDate>Tue, 11 Feb 2020 15:07:52 GMT</pubDate>
         </item>
         <item>
-            <title><![CDATA[Oscar 2020: saiba todos os vencedores e onde assisti-los]]></title>
-            <description><![CDATA['Parasita' fez história ao se tornar o primeiro longa não falado em inglês a vencer categoria de melhor filme. Academia de Artes e Ciências Cinematográficas anunciou neste domingo (9) os vencedores da 92ª edição do prêmio em 24 categorias.]]></description>
-            <link>http://www.bbc.com/portuguese/geral-51442119</link>
-            <guid isPermaLink="true">http://www.bbc.com/portuguese/geral-51442119</guid>
-            <pubDate>Mon, 10 Feb 2020 07:49:01 GMT</pubDate>
+            <title><![CDATA['Aqui não é sua casa': os relatos dos brasileiros detidos e deportados dos Estados Unidos]]></title>
+            <description><![CDATA[Na noite de sexta, um avião trouxe brasileiros deportados dos EUA de volta ao país; muitos estavam detidos há quase 20 dias, há mais de dez sem tomar banho, todos bem mais magros do que quando partiram.]]></description>
+            <link>http://www.bbc.com/portuguese/brasil-51431135</link>
+            <guid isPermaLink="true">http://www.bbc.com/portuguese/brasil-51431135</guid>
+            <pubDate>Sun, 09 Feb 2020 10:12:05 GMT</pubDate>
         </item>
         <item>
-            <title><![CDATA['Dois Papas': Diretor do filme, Fernando Meirelles diz que busca 'padre legal' para ser seu confessor]]></title>
-            <description><![CDATA[Produção que narra o encontro entre o papa Bento 16 e o então cardeal Jorge Mario Bergoglio concorre neste domingo (9) a três estatuetas do Oscar: melhor roteiro adaptado (Anthony McCarten), melhor ator (Jonathan Pryce) e melhor ator coadjuvante (Anthony Hopkins).]]></description>
-            <link>http://www.bbc.com/portuguese/geral-51422260</link>
-            <guid isPermaLink="true">http://www.bbc.com/portuguese/geral-51422260</guid>
-            <pubDate>Sun, 09 Feb 2020 14:23:51 GMT</pubDate>
+            <title><![CDATA[Músico de black metal é preso após queimar três igrejas nos EUA]]></title>
+            <description><![CDATA[Holden Matthews, de 22 anos, admitiu ter colocado fogo nos templos para melhorar seu perfil como músico, de acordo com os promotores.]]></description>
+            <link>http://www.bbc.com/portuguese/internacional-51453619</link>
+            <guid isPermaLink="true">http://www.bbc.com/portuguese/internacional-51453619</guid>
+            <pubDate>Tue, 11 Feb 2020 18:24:07 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Parceiros comerciais da BBC Brasil]]></title>

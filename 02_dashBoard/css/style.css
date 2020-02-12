@@ -35,10 +35,14 @@ img {
     font-size: 14px;
 }
 
-.news {
+#news {
     overflow-y: scroll;
     width: 100%;
     height: 480px;
+}
+
+#news > .card{
+    pointer-events:all;
 }
 
 .chart {
